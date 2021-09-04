@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1122</width>
-    <height>779</height>
+    <width>1125</width>
+    <height>832</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,9 +21,9 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>80</y>
+      <y>100</y>
       <width>1101</width>
-      <height>681</height>
+      <height>621</height>
      </rect>
     </property>
     <property name="mouseTracking">
@@ -69,10 +69,10 @@ border-radius:15px;</string>
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>230</y>
-        <width>651</width>
-        <height>331</height>
+        <x>90</x>
+        <y>250</y>
+        <width>591</width>
+        <height>321</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -83,7 +83,7 @@ border-radius:3px;</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../java_codes/maxresdefault.jpg</pixmap>
+       <pixmap>../../java_codes/124257240_3161320557306202_7239468197628284308_o.jpg</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -114,7 +114,7 @@ border-radius:15px;</string>
       <property name="geometry">
        <rect>
         <x>250</x>
-        <y>160</y>
+        <y>130</y>
         <width>191</width>
         <height>61</height>
        </rect>
@@ -137,7 +137,7 @@ border:3px solid black;
         <x>770</x>
         <y>40</y>
         <width>20</width>
-        <height>531</height>
+        <height>521</height>
        </rect>
       </property>
       <property name="frameShadow">
@@ -156,8 +156,8 @@ border:3px solid black;
      <widget class="QPushButton" name="pushButton_2">
       <property name="geometry">
        <rect>
-        <x>990</x>
-        <y>80</y>
+        <x>890</x>
+        <y>110</y>
         <width>91</width>
         <height>91</height>
        </rect>
@@ -172,8 +172,356 @@ background:cyan;</string>
        <string>Color</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>900</x>
+        <y>60</y>
+        <width>91</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Use Solid color</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>240</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Change Display size</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>380</y>
+        <width>141</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Add Overlay</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>220</y>
+        <width>131</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>   1920</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>390</y>
+        <width>47</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>1080</string>
+      </property>
+     </widget>
+     <widget class="QSlider" name="horizontalSlider">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>440</y>
+        <width>191</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>1020</x>
+        <y>420</y>
+        <width>51</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+border:2px solid black;
+border-radius:25px;
+background:cyan;</string>
+      </property>
+      <property name="text">
+       <string>Color</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line_2">
+      <property name="geometry">
+       <rect>
+        <x>790</x>
+        <y>400</y>
+        <width>301</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="lineWidth">
+       <number>3</number>
+      </property>
+      <property name="midLineWidth">
+       <number>1</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="Line" name="line_3">
+      <property name="geometry">
+       <rect>
+        <x>790</x>
+        <y>480</y>
+        <width>301</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="lineWidth">
+       <number>3</number>
+      </property>
+      <property name="midLineWidth">
+       <number>1</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="Line" name="line_4">
+      <property name="geometry">
+       <rect>
+        <x>790</x>
+        <y>260</y>
+        <width>301</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="lineWidth">
+       <number>3</number>
+      </property>
+      <property name="midLineWidth">
+       <number>1</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="Line" name="line_5">
+      <property name="geometry">
+       <rect>
+        <x>790</x>
+        <y>330</y>
+        <width>301</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="lineWidth">
+       <number>3</number>
+      </property>
+      <property name="midLineWidth">
+       <number>1</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="Line" name="line_6">
+      <property name="geometry">
+       <rect>
+        <x>790</x>
+        <y>210</y>
+        <width>301</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="lineWidth">
+       <number>3</number>
+      </property>
+      <property name="midLineWidth">
+       <number>1</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_2"/>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>730</y>
+      <width>1101</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(0, 170, 255);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="pushButton_4">
+     <property name="geometry">
+      <rect>
+       <x>920</x>
+       <y>20</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:black;
+color:rgb(255, 60, 12);
+font-size:15px;
+font-family:Georgia;
+text-shadow: 12px 2px black;
+opacity:809%;
+</string>
+     </property>
+     <property name="text">
+      <string>Know how to use</string>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>1101</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(157, 198, 202)</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QComboBox" name="comboBox">
+     <property name="geometry">
+      <rect>
+       <x>890</x>
+       <y>10</y>
+       <width>201</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(68, 61, 67);
+color:white;
+font-size:15px;
+font-family:Georgia;
+border:3px solid black;
+border-radius:15px;</string>
+     </property>
+     <property name="inputMethodHints">
+      <set>Qt::ImhUrlCharactersOnly</set>
+     </property>
+     <property name="editable">
+      <bool>true</bool>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <property name="insertPolicy">
+      <enum>QComboBox::InsertAtCurrent</enum>
+     </property>
+     <item>
+      <property name="text">
+       <string> Select Profile</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <disabledoff>res/Icons/Innactive.png</disabledoff>
+        <activeoff>res/Icons/Active.png</activeoff>
+       </iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MidNight</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Sunlight</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <activeoff>res/Icons/Innactive.png</activeoff>
+       </iconset>
+      </property>
+     </item>
+    </widget>
+    <widget class="QPushButton" name="pushButton_5">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgb(68, 61, 67);
+color:white;
+font-size:15px;
+font-family:Georgia;
+border:3px solid black;
+border-radius:15px;</string>
+     </property>
+     <property name="text">
+      <string>Create Profile</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>res/Icons/create_profile_addicon.png</normaloff>res/Icons/create_profile_addicon.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>25</width>
+       <height>25</height>
+      </size>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -181,7 +529,7 @@ background:cyan;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1122</width>
+     <width>1125</width>
      <height>21</height>
     </rect>
    </property>
