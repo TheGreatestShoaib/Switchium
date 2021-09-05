@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1125</width>
-    <height>832</height>
+    <height>851</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,7 +23,7 @@
       <x>10</x>
       <y>100</y>
       <width>1101</width>
-      <height>621</height>
+      <height>611</height>
      </rect>
     </property>
     <property name="mouseTracking">
@@ -512,6 +512,15 @@ border:3px solid black;
         <height>22</height>
        </rect>
       </property>
+      <property name="maxVisibleItems">
+       <number>5</number>
+      </property>
+      <property name="duplicatesEnabled">
+       <bool>false</bool>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
       <item>
        <property name="text">
         <string>30 M</string>
@@ -537,8 +546,47 @@ border:3px solid black;
         <height>23</height>
        </rect>
       </property>
+      <property name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show changes on preview&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
       <property name="text">
        <string>Show on Preview</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>910</x>
+        <y>450</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Papers Shape :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>990</x>
+        <y>540</y>
+        <width>101</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>* Only Works for ISB</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_3">
+      <property name="geometry">
+       <rect>
+        <x>930</x>
+        <y>490</y>
+        <width>69</width>
+        <height>22</height>
+       </rect>
       </property>
      </widget>
     </widget>
@@ -639,9 +687,9 @@ font-family:Georgia;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>730</y>
+      <y>719</y>
       <width>1101</width>
-      <height>80</height>
+      <height>91</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -653,35 +701,114 @@ font-family:Georgia;</string>
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QLabel" name="label_11">
      <property name="geometry">
       <rect>
-       <x>920</x>
-       <y>20</y>
-       <width>161</width>
+       <x>10</x>
+       <y>10</y>
+       <width>81</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>res/Icons/shine.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>0</y>
+       <width>171</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Segoe Print</family>
+       <pointsize>-1</pointsize>
+      </font>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size:30px;
+</string>
+     </property>
+     <property name="text">
+      <string>Switchium</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::RichText</enum>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_16">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>50</y>
+       <width>331</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>OCR A Std</family>
+       <pointsize>-1</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+font-size:14px;</string>
+     </property>
+     <property name="text">
+      <string>An OpenSource Wallpaper Manager</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::RichText</enum>
+     </property>
+     <property name="margin">
+      <number>5</number>
+     </property>
+     <property name="indent">
+      <number>5</number>
+     </property>
+     <property name="openExternalLinks">
+      <bool>false</bool>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::LinksAccessibleByMouse</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_17">
+     <property name="geometry">
+      <rect>
+       <x>960</x>
+       <y>55</y>
+       <width>121</width>
        <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background:black;
-color:rgb(255, 60, 12);
-font-size:15px;
-font-family:Georgia;
-text-shadow: 12px 2px black;
-opacity:809%;
-</string>
+      <string notr="true">font-size:15px;
+
+color:white;</string>
      </property>
      <property name="text">
-      <string>Know how to use</string>
+      <string>&lt;a href=https://google.com&gt;Looking for Help?&lt;/a&gt;</string>
      </property>
-     <property name="checkable">
-      <bool>false</bool>
-     </property>
-     <property name="checked">
-      <bool>false</bool>
-     </property>
-     <property name="flat">
-      <bool>false</bool>
+     <property name="openExternalLinks">
+      <bool>true</bool>
      </property>
     </widget>
    </widget>
@@ -709,9 +836,9 @@ opacity:809%;
     <widget class="QComboBox" name="comboBox">
      <property name="geometry">
       <rect>
-       <x>910</x>
+       <x>900</x>
        <y>10</y>
-       <width>181</width>
+       <width>191</width>
        <height>31</height>
       </rect>
      </property>
@@ -734,6 +861,9 @@ border:5px solid black;
      </property>
      <property name="insertPolicy">
       <enum>QComboBox::InsertAtCurrent</enum>
+     </property>
+     <property name="frame">
+      <bool>true</bool>
      </property>
      <item>
       <property name="text">
