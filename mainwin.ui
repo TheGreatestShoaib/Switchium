@@ -36,7 +36,7 @@
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">background:gray;</string>
+     <string notr="true">background:white;</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::Box</enum>
@@ -48,7 +48,7 @@
      <number>-1</number>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QPushButton" name="pushButton">
@@ -384,7 +384,7 @@ background:cyan;</string>
        <rect>
         <x>30</x>
         <y>10</y>
-        <width>381</width>
+        <width>581</width>
         <height>21</height>
        </rect>
       </property>
@@ -397,7 +397,7 @@ font-family:Georgia;
 </string>
       </property>
       <property name="text">
-       <string> Press Right Arrow for switching Multipaper Mode</string>
+       <string>You're In Singlepaper Mode !  Press Right Arrow Key for Switch Into Multipaper Mode</string>
       </property>
      </widget>
      <widget class="QLabel" name="highlightor_star1">
@@ -457,7 +457,149 @@ font-family:Georgia;</string>
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="page_2"/>
+    <widget class="QWidget" name="page_2">
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>270</y>
+        <width>211</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../java_codes/124257240_3161320557306202_7239468197628284308_o.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>270</y>
+        <width>211</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../java_codes/abandonsa.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>230</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Currentpaper Preview</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>240</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Next Wallpaper</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>60</y>
+        <width>411</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:rgb(68, 61, 67);
+color:white;
+font-size:18px;
+font-family:Georgia;
+border:3px solid black;
+border-radius:15px;</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_6">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>60</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:rgb(68, 61, 67);
+color:white;
+font-size:13px;
+font-family:Georgia;
+border:3px solid black;
+border-radius:15px;</string>
+      </property>
+      <property name="text">
+       <string>Select Directory</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>10</y>
+        <width>31</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:red;
+font-size:25px;
+font-family:Georgia;</string>
+      </property>
+      <property name="text">
+       <string>  *</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>10</y>
+        <width>571</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size:15px;
+font-family:Georgia;</string>
+      </property>
+      <property name="text">
+       <string>You're In Multipaper Mode !  Press Left Arrow Key for Switch Into Singlepaper Mode</string>
+      </property>
+     </widget>
+    </widget>
    </widget>
    <widget class="QFrame" name="footer_frame">
     <property name="geometry">
