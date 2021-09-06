@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1138</width>
-    <height>889</height>
+    <width>1305</width>
+    <height>854</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,10 +20,10 @@
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>30</x>
       <y>10</y>
-      <width>1121</width>
-      <height>841</height>
+      <width>1221</width>
+      <height>801</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -32,7 +32,7 @@
 
 background:rgb(128, 196, 255);
 
-border:8px solid rgb(24, 24, 24);
+
 
 }</string>
     </property>
@@ -45,9 +45,9 @@ border:8px solid rgb(24, 24, 24);
     <widget class="QFrame" name="footer_frame">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>740</y>
-       <width>1101</width>
+       <x>0</x>
+       <y>700</y>
+       <width>1221</width>
        <height>91</height>
       </rect>
      </property>
@@ -174,10 +174,10 @@ color:white;</string>
     <widget class="QStackedWidget" name="stacked_frame">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>120</y>
-       <width>1101</width>
-       <height>611</height>
+       <x>0</x>
+       <y>130</y>
+       <width>1221</width>
+       <height>571</height>
       </rect>
      </property>
      <property name="mouseTracking">
@@ -895,9 +895,9 @@ font-family:Georgia;</string>
     <widget class="QFrame" name="header_frame">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>1101</width>
+       <x>0</x>
+       <y>30</y>
+       <width>1221</width>
        <height>91</height>
       </rect>
      </property>
@@ -916,7 +916,7 @@ font-family:Georgia;</string>
      <widget class="QComboBox" name="comboBox">
       <property name="geometry">
        <rect>
-        <x>900</x>
+        <x>1030</x>
         <y>10</y>
         <width>191</width>
         <height>31</height>
@@ -1053,6 +1053,76 @@ border:3px solid black;
       </property>
      </widget>
     </widget>
+    <widget class="QFrame" name="frame_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1221</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:black;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="geometry">
+       <rect>
+        <x>1170</x>
+        <y>0</y>
+        <width>51</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:white;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>res/Icons/red.png</normaloff>res/Icons/red.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>40</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>1130</x>
+        <y>0</y>
+        <width>21</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>res/Icons/done.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -1060,7 +1130,7 @@ border:3px solid black;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1138</width>
+     <width>1305</width>
      <height>21</height>
     </rect>
    </property>
