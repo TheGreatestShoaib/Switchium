@@ -85,10 +85,10 @@ class Ui_MainWindow(object):
         self.frameobj.setMouseTracking(False)
         self.frameobj.setAcceptDrops(True)
         self.frameobj.setAutoFillBackground(False)
-        self.frameobj.setStyleSheet("\n"
+        self.frameobj.setStyleSheet("Qframe{\n"
 "background: #282a36 ;\n"
 "\n"
-"")
+"}")
         self.frameobj.setFrameShape(QtWidgets.QFrame.Box)
         self.frameobj.setLineWidth(1)
         self.frameobj.setMidLineWidth(-1)
@@ -98,7 +98,7 @@ class Ui_MainWindow(object):
         self.pushButton = QtWidgets.QPushButton(self.page)
         self.pushButton.setGeometry(QtCore.QRect(570, 60, 131, 41))
         self.pushButton.setStyleSheet("background:    #44475a        ;\n"
-"color:white;\n"
+"color: #f8f8f2 ;\n"
 "font-size:13px;\n"
 "font-family:Georgia;\n"
 "border:3px solid black;\n"
@@ -116,7 +116,7 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(self.page)
         self.label.setGeometry(QtCore.QRect(60, 60, 491, 41))
         self.label.setStyleSheet("background:#44475a;\n"
-"color:white;\n"
+"color:#f8f8f2;\n"
 "font-size:18px;\n"
 "font-family:Georgia;\n"
 "border:3px solid #44475a;\n"
@@ -195,7 +195,7 @@ class Ui_MainWindow(object):
         self.preview_text_label1_2.setGeometry(QtCore.QRect(550, 150, 151, 31))
         self.preview_text_label1_2.setStyleSheet("background : transparent;\n"
 "color: #f8f8f2 ;\n"
-"font-size:13px;\n"
+"font-size:17px;\n"
 "font-family:Georgia;\n"
 "\n"
 "")
@@ -281,11 +281,19 @@ class Ui_MainWindow(object):
         self.comboBox_3 = QtWidgets.QComboBox(self.frame_3)
         self.comboBox_3.setGeometry(QtCore.QRect(180, 480, 171, 22))
         self.comboBox_3.setStyleSheet("\n"
+"\n"
+"\n"
+"\n"
 "background:\n"
 "\n"
-"rgb(234, 255, 253);\n"
 "\n"
-"color:black;")
+"qlineargradient(spread:repeat, x1:0, y1:0, x2:0.995412, y2:1, stop:0 rgba(40, 42, 54, 265), stop:1 rgba(189, 147, 249, 205))\n"
+"\n"
+";\n"
+"\n"
+"selection-background-color:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.997, y2:1, stop:0 rgba(158, 29, 145, 167), stop:0.90899 rgba(51, 63, 26, 255), stop:1 rgba(15, 44, 41, 255));\n"
+"\n"
+"color:#f8f8f2;")
         self.comboBox_3.setObjectName("comboBox_3")
         self.comboBox_3.addItem("")
         self.label_18 = QtWidgets.QLabel(self.frame_3)
@@ -343,13 +351,17 @@ class Ui_MainWindow(object):
         self.comboBox_4.setStyleSheet("\n"
 "background:\n"
 "\n"
-"qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 156, 0, 167), stop:1 rgba(24, 46, 79, 247))\n"
+"qlineargradient(spread:repeat, x1:0, y1:0, x2:0.995412, y2:1, stop:0 rgba(40, 42, 54, 265), stop:1 rgba(189, 147, 249, 205))\n"
 "\n"
 ";\n"
 "\n"
+"selection-background-color:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.997, y2:1, stop:0 rgba(158, 29, 145, 167), stop:0.90899 rgba(51, 63, 26, 255), stop:1 rgba(15, 44, 41, 255));\n"
+"\n"
 "color:white;\n"
 "font-family:Times New Roman;\n"
-"font-size:13px;")
+"font-size:13px;\n"
+"\n"
+"")
         self.comboBox_4.setObjectName("comboBox_4")
         self.comboBox_4.addItem("")
         self.comboBox_4.addItem("")
@@ -372,12 +384,19 @@ class Ui_MainWindow(object):
         self.header_frame.setObjectName("header_frame")
         self.comboBox = QtWidgets.QComboBox(self.header_frame)
         self.comboBox.setGeometry(QtCore.QRect(1030, 10, 191, 31))
-        self.comboBox.setStyleSheet("background:rgb(68, 61, 67);\n"
+        self.comboBox.setStyleSheet("\n"
 "color:white;\n"
-"font-size:15px;\n"
+"font-size:12px;\n"
 "font-family:Georgia;\n"
-"border: 3px solid black;\n"
-"")
+"border: 3px solid #44475a;\n"
+"\n"
+"\n"
+"background:\n"
+"\n"
+"\n"
+"qlineargradient(spread:repeat, x1:0, y1:0, x2:0.997, y2:1, stop:0 rgba(158, 29, 145, 167), stop:0.90899 rgba(51, 63, 26, 255), stop:1 rgba(15, 44, 41, 255));\n"
+"\n"
+"selection-background-color:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.995412, y2:1, stop:0 rgba(40, 42, 54, 265), stop:1 rgba(189, 147, 249, 205));")
         self.comboBox.setInputMethodHints(QtCore.Qt.ImhUrlCharactersOnly)
         self.comboBox.setEditable(False)
         self.comboBox.setInsertPolicy(QtWidgets.QComboBox.InsertAtCurrent)
@@ -393,7 +412,9 @@ class Ui_MainWindow(object):
         self.comboBox.addItem(icon2, "")
         self.pushButton_5 = QtWidgets.QPushButton(self.header_frame)
         self.pushButton_5.setGeometry(QtCore.QRect(300, 20, 151, 41))
-        self.pushButton_5.setStyleSheet("background:rgb(68, 61, 67);\n"
+        self.pushButton_5.setStyleSheet("background: \n"
+"#44475a\n"
+";\n"
 "color:white;\n"
 "font-size:15px;\n"
 "font-family:Georgia;\n"
@@ -409,8 +430,7 @@ class Ui_MainWindow(object):
         self.lineEdit.setCursor(QtGui.QCursor(QtCore.Qt.IBeamCursor))
         self.lineEdit.setMouseTracking(False)
         self.lineEdit.setFocusPolicy(QtCore.Qt.ClickFocus)
-        self.lineEdit.setStyleSheet("background:white;\n"
-"\n"
+        self.lineEdit.setStyleSheet("background:#f8f8f2;\n"
 "border:3px solid rgb(24,24,24);")
         self.lineEdit.setInputMask("")
         self.lineEdit.setText("")

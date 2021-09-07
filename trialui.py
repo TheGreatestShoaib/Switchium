@@ -2,7 +2,7 @@
 from src import Ui_MainWindow
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-cl
+
 
 
 
