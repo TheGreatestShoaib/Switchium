@@ -1,0 +1,25 @@
+{
+
+"profile1":
+			{
+				"mode":"single",
+				"file_name":"horahora.jpg",
+				"file_size":"129KB",
+				"file_path":"bruh.jpg",
+				"set_time":"",
+				"instant_skip":true
+			},
+
+"profile2":
+			{
+				"mode":"multiple",
+				"file_name":"",
+				"file_name":"horahora.jpg",
+				"file_path":["wallpapertest.jpg","bruh.jpg","obito.jpg"],
+				"file_size":"129KB",
+				"set_time":"",
+				"instant_skip":true
+
+			}
+
+}
