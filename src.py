@@ -14,8 +14,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1247, 837)
+        MainWindow.resize(1223, 837)
         MainWindow.setStyleSheet("background:rgb(24,24,24);")
+        MainWindow.setWindowFlags(QtCore.Qt.WindowFlags(QtCore.Qt.FramelessWindowHint) )
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)
@@ -101,7 +102,7 @@ class Ui_MainWindow(object):
 "color: #f8f8f2 ;\n"
 "font-size:13px;\n"
 "font-family:Georgia;\n"
-"border:3px solid black;\n"
+"\n"
 "border-radius:15px;")
         self.pushButton.setObjectName("pushButton")
         self.preview_label1 = QtWidgets.QLabel(self.page)
@@ -229,7 +230,7 @@ class Ui_MainWindow(object):
 "background:cyan;")
         self.pushButton_2.setObjectName("pushButton_2")
         self.label_3 = QtWidgets.QLabel(self.frame_3)
-        self.label_3.setGeometry(QtCore.QRect(270, 30, 91, 21))
+        self.label_3.setGeometry(QtCore.QRect(270, 20, 91, 21))
         self.label_3.setStyleSheet("color:white;")
         self.label_3.setObjectName("label_3")
         self.pushButton_3 = QtWidgets.QPushButton(self.frame_3)
@@ -314,11 +315,12 @@ class Ui_MainWindow(object):
         self.line_3.setObjectName("line_3")
         self.pushButton_7 = QtWidgets.QPushButton(self.frame_3)
         self.pushButton_7.setGeometry(QtCore.QRect(10, 360, 111, 31))
-        self.pushButton_7.setStyleSheet("background:rgb(68, 61, 67);\n"
+        self.pushButton_7.setStyleSheet("background:transparent;\n"
 "color:white;\n"
-"font-size:13px;\n"
+"font-size:12px;\n"
 "font-family:Georgia;\n"
-"border:3px solid qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(255, 0, 0, 255), stop:0.479904 rgba(255, 0, 0, 255), stop:0.513753 rgba(255, 255, 255, 255), stop:0.973381 rgba(6, 6, 6, 255));")
+"border:3px solid qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(129, 0, 158, 167), stop:1 rgba(255, 255, 255, 255));\n"
+"")
         self.pushButton_7.setObjectName("pushButton_7")
         self.horizontalSlider = QtWidgets.QSlider(self.frame_3)
         self.horizontalSlider.setGeometry(QtCore.QRect(10, 310, 191, 22))
@@ -368,6 +370,18 @@ class Ui_MainWindow(object):
         self.comboBox_4.addItem("")
         self.comboBox_4.addItem("")
         self.comboBox_4.addItem("")
+        self.label_13 = QtWidgets.QLabel(self.frame_3)
+        self.label_13.setGeometry(QtCore.QRect(30, 20, 111, 21))
+        self.label_13.setStyleSheet("color:white;\n"
+"font-size:12px;")
+        self.label_13.setObjectName("label_13")
+        self.label_14 = QtWidgets.QLabel(self.frame_3)
+        self.label_14.setGeometry(QtCore.QRect(20, 70, 121, 51))
+        self.label_14.setStyleSheet("color: #ff5555 ;\n"
+"font-size:20px;\n"
+"font-family: Monospace;")
+        self.label_14.setIndent(21)
+        self.label_14.setObjectName("label_14")
         self.frameobj.addWidget(self.page)
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
@@ -385,7 +399,7 @@ class Ui_MainWindow(object):
         self.comboBox = QtWidgets.QComboBox(self.header_frame)
         self.comboBox.setGeometry(QtCore.QRect(1030, 10, 191, 31))
         self.comboBox.setStyleSheet("\n"
-"color:white;\n"
+"color:black;\n"
 "font-size:12px;\n"
 "font-family:Georgia;\n"
 "border: 3px solid #44475a;\n"
@@ -396,7 +410,7 @@ class Ui_MainWindow(object):
 "\n"
 "qlineargradient(spread:repeat, x1:0, y1:0, x2:0.997, y2:1, stop:0 rgba(158, 29, 145, 167), stop:0.90899 rgba(51, 63, 26, 255), stop:1 rgba(15, 44, 41, 255));\n"
 "\n"
-"selection-background-color:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.995412, y2:1, stop:0 rgba(40, 42, 54, 265), stop:1 rgba(189, 147, 249, 205));")
+"selection-background-color:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.997, y2:1, stop:0 rgba(158, 29, 145, 167), stop:0.90899 rgba(51, 63, 26, 255), stop:1 rgba(15, 44, 41, 255));")
         self.comboBox.setInputMethodHints(QtCore.Qt.ImhUrlCharactersOnly)
         self.comboBox.setEditable(False)
         self.comboBox.setInsertPolicy(QtWidgets.QComboBox.InsertAtCurrent)
@@ -404,7 +418,6 @@ class Ui_MainWindow(object):
         self.comboBox.setObjectName("comboBox")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap("res/Icons/Innactive.png"), QtGui.QIcon.Disabled, QtGui.QIcon.Off)
-        icon1.addPixmap(QtGui.QPixmap("res/Icons/Active.png"), QtGui.QIcon.Active, QtGui.QIcon.Off)
         self.comboBox.addItem(icon1, "")
         self.comboBox.addItem("")
         icon2 = QtGui.QIcon()
@@ -492,7 +505,7 @@ class Ui_MainWindow(object):
         self.preview_text_label1.setText(_translate("MainWindow", "          Preview:"))
         self.label_8.setText(_translate("MainWindow", "   1920"))
         self.label_9.setText(_translate("MainWindow", "1080"))
-        self.instruction_message1.setText(_translate("MainWindow", "You\'re In Singlepaper Mode !  Press Right Arrow Key for Switch Into Multipaper Mode"))
+        self.instruction_message1.setText(_translate("MainWindow", "You\'re In Singlepaper Mode !"))
         self.highlightor_star1.setText(_translate("MainWindow", "  *"))
         self.preview_text_label1_2.setText(_translate("MainWindow", "Next Wallpaper:"))
         self.pushButton_8.setText(_translate("MainWindow", "Apply Changes"))
@@ -515,6 +528,8 @@ class Ui_MainWindow(object):
         self.comboBox_4.setItemText(2, _translate("MainWindow", "jpeg"))
         self.comboBox_4.setItemText(3, _translate("MainWindow", "svg"))
         self.comboBox_4.setItemText(4, _translate("MainWindow", "ico"))
+        self.label_13.setText(_translate("MainWindow", "Next Wallpaper In:"))
+        self.label_14.setText(_translate("MainWindow", "00:20:31"))
         self.comboBox.setItemText(0, _translate("MainWindow", " Select Profile"))
         self.comboBox.setItemText(1, _translate("MainWindow", "MidNight"))
         self.comboBox.setItemText(2, _translate("MainWindow", "Sunlight"))

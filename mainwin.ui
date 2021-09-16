@@ -227,7 +227,7 @@ background: #282a36 ;
 color: #f8f8f2 ;
 font-size:13px;
 font-family:Georgia;
-border:3px solid black;
+
 border-radius:15px;</string>
        </property>
        <property name="text">
@@ -385,7 +385,7 @@ font-family:Georgia;
 </string>
        </property>
        <property name="text">
-        <string>You're In Singlepaper Mode !  Press Right Arrow Key for Switch Into Multipaper Mode</string>
+        <string>You're In Singlepaper Mode !</string>
        </property>
       </widget>
       <widget class="QLabel" name="highlightor_star1">
@@ -566,7 +566,7 @@ background:cyan;</string>
        <widget class="QLabel" name="label_3">
         <property name="geometry">
          <rect>
-          <x>250</x>
+          <x>270</x>
           <y>20</y>
           <width>91</width>
           <height>21</height>
@@ -814,11 +814,12 @@ color:#f8f8f2;</string>
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show changes on preview&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="styleSheet">
-         <string notr="true">background:rgb(68, 61, 67);
+         <string notr="true">background:transparent;
 color:white;
-font-size:13px;
+font-size:12px;
 font-family:Georgia;
-border:3px solid qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(255, 0, 0, 255), stop:0.479904 rgba(255, 0, 0, 255), stop:0.513753 rgba(255, 255, 255, 255), stop:0.973381 rgba(6, 6, 6, 255));</string>
+border:3px solid qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(129, 0, 158, 167), stop:1 rgba(255, 255, 255, 255));
+</string>
         </property>
         <property name="text">
          <string>Show Preview</string>
@@ -961,52 +962,41 @@ font-size:13px;
        <widget class="QLabel" name="label_13">
         <property name="geometry">
          <rect>
-          <x>50</x>
-          <y>60</y>
-          <width>121</width>
-          <height>81</height>
+          <x>30</x>
+          <y>20</y>
+          <width>111</width>
+          <height>21</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">color:#282a36;
-background:#ff5555;
-font-family: Monospace;
-border-radius:60px;
-font-size:20px;
-border: 4px solid qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0.118961 rgba(248, 248, 242, 255), stop:0.907297 rgba(80, 250, 123, 255))</string>
+         <string notr="true">color:white;
+font-size:12px;</string>
         </property>
         <property name="text">
-         <string>10:20:22</string>
-        </property>
-        <property name="indent">
-         <number>18</number>
+         <string>Next Wallpaper In:</string>
         </property>
        </widget>
-      </widget>
-      <widget class="QProgressBar" name="progressBar">
-       <property name="geometry">
-        <rect>
-         <x>290</x>
-         <y>140</y>
-         <width>301</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="value">
-        <number>24</number>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignJustify|Qt::AlignVCenter</set>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="textDirection">
-        <enum>QProgressBar::BottomToTop</enum>
-       </property>
-       <property name="format">
-        <string>%p%</string>
-       </property>
+       <widget class="QLabel" name="label_14">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>70</y>
+          <width>121</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ff5555 ;
+font-size:20px;
+font-family: Monospace;</string>
+        </property>
+        <property name="text">
+         <string>00:20:31</string>
+        </property>
+        <property name="indent">
+         <number>21</number>
+        </property>
+       </widget>
       </widget>
      </widget>
      <widget class="QWidget" name="page_2"/>
@@ -1046,7 +1036,7 @@ qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(133, 92, 158,
       </property>
       <property name="styleSheet">
        <string notr="true">
-color:white;
+color:black;
 font-size:12px;
 font-family:Georgia;
 border: 3px solid #44475a;
@@ -1057,7 +1047,7 @@ background:
 
 qlineargradient(spread:repeat, x1:0, y1:0, x2:0.997, y2:1, stop:0 rgba(158, 29, 145, 167), stop:0.90899 rgba(51, 63, 26, 255), stop:1 rgba(15, 44, 41, 255));
 
-selection-background-color:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.995412, y2:1, stop:0 rgba(40, 42, 54, 265), stop:1 rgba(189, 147, 249, 205));</string>
+selection-background-color:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.997, y2:1, stop:0 rgba(158, 29, 145, 167), stop:0.90899 rgba(51, 63, 26, 255), stop:1 rgba(15, 44, 41, 255));</string>
       </property>
       <property name="inputMethodHints">
        <set>Qt::ImhUrlCharactersOnly</set>
@@ -1081,7 +1071,6 @@ selection-background-color:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.99541
        <property name="icon">
         <iconset>
          <disabledoff>res/Icons/Innactive.png</disabledoff>
-         <activeoff>res/Icons/Active.png</activeoff>
         </iconset>
        </property>
       </item>

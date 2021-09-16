@@ -1,10 +1,10 @@
 import CoreUtils as Cu
 import data_maker
 
-path = "wallpapers/arch.png"
+path = "wallpapers"
 
-profile_name = "new__test22"
+profile_name = "dir_test"
 dumpable_data = data_maker.POST_data(path, data_maker.data )
 
 
-cu.dump_data(profile_name,dumpable_data)
+Cu.dump_data(profile_name,dumpable_data)
