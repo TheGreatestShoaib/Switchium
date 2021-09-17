@@ -14,9 +14,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1223, 837)
+        MainWindow.resize(1224, 837)
         MainWindow.setStyleSheet("background:rgb(24,24,24);")
-        MainWindow.setWindowFlags(QtCore.Qt.WindowFlags(QtCore.Qt.FramelessWindowHint) )
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)

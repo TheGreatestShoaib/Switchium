@@ -1,0 +1,21 @@
+
+
+breakfast work :
+{
+
+fix the drag and drop effect from trialui.py
+fix errors 
+apply backends to front end 
+
+
+works should be done :
+}
+
+{
+optimize background run 
+fix file structures
+}
+
+
+
+
