@@ -1,6 +1,7 @@
 import os
 import sys
 from PySide2 import QtWidgets, QtGui
+from changebg import change_wallpaper,change_single_wallpaper,paper_plot
 
 class SystemTray(QtWidgets.QSystemTrayIcon):
 
@@ -25,8 +26,12 @@ class SystemTray(QtWidgets.QSystemTrayIcon):
             self.change_background()
 
     def change_background(self):
+        if paper_plot == "single":
+            change_single_wallpaper()
+        else:
+            change_wallpaper()
 
-        pass
+
 
     def closeapp(self):
         sys.exit()

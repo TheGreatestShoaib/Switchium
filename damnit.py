@@ -3,7 +3,6 @@
 from src import Ui_MainWindow as mainbox
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication, QWidget
-
 import sys
 
 from src import Ui_MainWindow
@@ -12,7 +11,6 @@ class StartQT4(QtWidgets.QMainWindow):
     def __init__(self, parent=None):
         QtWidgets.QWidget.__init__(self, parent)
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
-        #self.setFrameStyle(QFrame::HLine | QFrame::Sunken)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.pushButton_8.clicked.connect(self.printer)
@@ -44,5 +42,10 @@ class StartQT4(QtWidgets.QMainWindow):
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     myapp = StartQT4()
+
     myapp.show()
     sys.exit(app.exec_())
+
+    # sys_window = QtWidgets.QWidget()
+    # sys_tray_icon = SystemTray(QtGui.QIcon("res/Icons/Active.png"), sys_window)
+    # sys_tray_icon.show()

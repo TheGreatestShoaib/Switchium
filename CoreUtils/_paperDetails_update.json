@@ -1,4 +1,6 @@
 {
+  "active_profile":"dir_test",
+
   "profile1": {
     "mode": "single",
     "file_name": "horahora.jpg",
@@ -11,7 +13,7 @@
     "mode": "single",
     "file_name": "horahora.jpg",
     "file_size": "129KB",
-    "file_path": "D:\\py_codes\\Ashen Transistor\\wallpapers\\arch.png",
+    "file_path": "D:\\py_codes\\Ashen Transistor\\wallpapers\\manjaro.png",
     "set_time": 10,
     "instant_skip": true
   },
@@ -24,13 +26,9 @@
       "D:\\py_codes\\Ashen Transistor\\wallpapers\\240947770_1098839513855940_8559387054573194912_n.jpg",
       "D:\\py_codes\\Ashen Transistor\\wallpapers\\9c8496bdcf9e070d75945371f0704d1d.jpg",
       "D:\\py_codes\\Ashen Transistor\\wallpapers\\download (1).jpg",
-      "D:\\py_codes\\Ashen Transistor\\wallpapers\\download.jpg",
       "D:\\py_codes\\Ashen Transistor\\wallpapers\\pYF2LX.jpg",
       "D:\\py_codes\\Ashen Transistor\\wallpapers\\wp7758015.jpg",
-      "D:\\py_codes\\Ashen Transistor\\wallpapers\\arch.png",
-      "D:\\py_codes\\Ashen Transistor\\wallpapers\\artix.png",
-      "D:\\py_codes\\Ashen Transistor\\wallpapers\\manjaro.png",
-      "D:\\py_codes\\Ashen Transistor\\wallpapers\\mint.png"
+      "D:\\py_codes\\Ashen Transistor\\wallpapers\\arch.png"
     ],
     "set_time": 10,
     "instant_skip": true
