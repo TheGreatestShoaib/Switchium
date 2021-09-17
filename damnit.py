@@ -12,6 +12,7 @@ class StartQT4(QtWidgets.QMainWindow):
     def __init__(self, parent=None):
         QtWidgets.QWidget.__init__(self, parent)
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+        #self.setFrameStyle(QFrame::HLine | QFrame::Sunken)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.pushButton_8.clicked.connect(self.printer)

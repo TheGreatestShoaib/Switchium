@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1247</width>
+    <width>1226</width>
     <height>837</height>
    </rect>
   </property>
@@ -37,7 +37,7 @@ background:rgb(24,24,24);
 }</string>
     </property>
     <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
+     <enum>QFrame::NoFrame</enum>
     </property>
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
@@ -53,7 +53,6 @@ background:rgb(24,24,24);
      </property>
      <property name="styleSheet">
       <string notr="true">background:rgb(0, 170, 155);
-
 background: #6272a4 ;</string>
      </property>
      <property name="frameShape">
@@ -197,11 +196,10 @@ color:white;
      <property name="styleSheet">
       <string notr="true">Qframe{
 background: #282a36 ;
-
 }</string>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="lineWidth">
       <number>1</number>
@@ -356,8 +354,6 @@ color: #ff79c6</string>
        </property>
        <property name="styleSheet">
         <string notr="true">font-size:18px;
-
- 
 color: #8be9fd</string>
        </property>
        <property name="text">
@@ -374,11 +370,7 @@ color: #8be9fd</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">color:cyan;
-
-color:#ffb86c;
-
-
+        <string notr="true">color:#ffb86c;
 font-size:15px;
 font-family:Georgia;
 
@@ -716,7 +708,7 @@ selection-background-color: qlineargradient(spread:repeat, x1:0, y1:0, x2:0.997,
          <enum>Qt::Horizontal</enum>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_3">
+       <widget class="QComboBox" name="image_ratio_combo">
         <property name="geometry">
          <rect>
           <x>180</x>
@@ -726,19 +718,8 @@ selection-background-color: qlineargradient(spread:repeat, x1:0, y1:0, x2:0.997,
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">
-
-
-
-background:
-
-
-qlineargradient(spread:repeat, x1:0, y1:0, x2:0.995412, y2:1, stop:0 rgba(40, 42, 54, 265), stop:1 rgba(189, 147, 249, 205))
-
-;
-
+         <string notr="true">background:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.995412, y2:1, stop:0 rgba(40, 42, 54, 265), stop:1 rgba(189, 147, 249, 205));
 selection-background-color:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.997, y2:1, stop:0 rgba(158, 29, 145, 167), stop:0.90899 rgba(51, 63, 26, 255), stop:1 rgba(15, 44, 41, 255));
-
 color:#f8f8f2;</string>
         </property>
         <item>
@@ -825,7 +806,7 @@ border:3px solid qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:1, stop:0 r
          <string>Show Preview</string>
         </property>
        </widget>
-       <widget class="QSlider" name="horizontalSlider">
+       <widget class="QSlider" name="overylay_percentage_slider">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -908,7 +889,7 @@ border:3px solid qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:1, stop:0 r
          <string>* Only Works for ISB</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_4">
+       <widget class="QComboBox" name="image_extension_filter_combo">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -918,15 +899,8 @@ border:3px solid qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:1, stop:0 r
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">
-background:
-
-qlineargradient(spread:repeat, x1:0, y1:0, x2:0.995412, y2:1, stop:0 rgba(40, 42, 54, 265), stop:1 rgba(189, 147, 249, 205))
-
-;
-
+         <string notr="true">background:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.995412, y2:1, stop:0 rgba(40, 42, 54, 265), stop:1 rgba(189, 147, 249, 205));
 selection-background-color:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.997, y2:1, stop:0 rgba(158, 29, 145, 167), stop:0.90899 rgba(51, 63, 26, 255), stop:1 rgba(15, 44, 41, 255));
-
 color:white;
 font-family:Times New Roman;
 font-size:13px;
@@ -1011,10 +985,7 @@ font-family: Monospace;</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background:
-
-
-qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(133, 92, 158, 167), stop:1 rgba(44, 44, 44, 255))</string>
+      <string notr="true">background:qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(133, 92, 158, 167), stop:1 rgba(44, 44, 44, 255));</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -1202,7 +1173,7 @@ border:3px solid rgb(24,24,24);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background:white;</string>
+       <string notr="true">background:black;</string>
       </property>
       <property name="text">
        <string/>
@@ -1258,7 +1229,7 @@ border:3px solid rgb(24,24,24);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1247</width>
+     <width>1226</width>
      <height>21</height>
     </rect>
    </property>

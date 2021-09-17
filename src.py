@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1224, 837)
+        MainWindow.resize(1226, 837)
         MainWindow.setStyleSheet("background:rgb(24,24,24);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -28,13 +28,12 @@ class Ui_MainWindow(object):
 "\n"
 "\n"
 "}")
-        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
         self.footer_frame = QtWidgets.QFrame(self.frame)
         self.footer_frame.setGeometry(QtCore.QRect(0, 700, 1221, 91))
-        self.footer_frame.setStyleSheet("background:rgb(0, 170, 155);\n"
-"\n"
+        self.footer_frame.setStyleSheet("background:rgb(10, 170, 155);\n"
 "background: #6272a4 ;")
         self.footer_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.footer_frame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -87,9 +86,8 @@ class Ui_MainWindow(object):
         self.frameobj.setAutoFillBackground(False)
         self.frameobj.setStyleSheet("Qframe{\n"
 "background: #282a36 ;\n"
-"\n"
 "}")
-        self.frameobj.setFrameShape(QtWidgets.QFrame.Box)
+        self.frameobj.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frameobj.setLineWidth(1)
         self.frameobj.setMidLineWidth(-1)
         self.frameobj.setObjectName("frameobj")
@@ -148,17 +146,11 @@ class Ui_MainWindow(object):
         self.label_9 = QtWidgets.QLabel(self.page)
         self.label_9.setGeometry(QtCore.QRect(10, 240, 41, 21))
         self.label_9.setStyleSheet("font-size:18px;\n"
-"\n"
-" \n"
 "color: #8be9fd")
         self.label_9.setObjectName("label_9")
         self.instruction_message1 = QtWidgets.QLabel(self.page)
         self.instruction_message1.setGeometry(QtCore.QRect(30, 10, 581, 21))
-        self.instruction_message1.setStyleSheet("color:cyan;\n"
-"\n"
-"color:#ffb86c;\n"
-"\n"
-"\n"
+        self.instruction_message1.setStyleSheet("color:#ffb86c;\n"
 "font-size:15px;\n"
 "font-family:Georgia;\n"
 "\n"
@@ -207,7 +199,7 @@ class Ui_MainWindow(object):
 "color:white;\n"
 "font-size:12px;\n"
 "font-family:Georgia;\n"
-"border:3px solid qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(129, 0, 158, 167), stop:1 rgba(255, 255, 255, 255));\n"
+"border:3px solid qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(129, 10, 158, 167), stop:1 rgba(253, 253, 253, 253));\n"
 "\n"
 "")
         icon = QtGui.QIcon()
@@ -278,24 +270,13 @@ class Ui_MainWindow(object):
         self.line_6.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_6.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_6.setObjectName("line_6")
-        self.comboBox_3 = QtWidgets.QComboBox(self.frame_3)
-        self.comboBox_3.setGeometry(QtCore.QRect(180, 480, 171, 22))
-        self.comboBox_3.setStyleSheet("\n"
-"\n"
-"\n"
-"\n"
-"background:\n"
-"\n"
-"\n"
-"qlineargradient(spread:repeat, x1:0, y1:0, x2:0.995412, y2:1, stop:0 rgba(40, 42, 54, 265), stop:1 rgba(189, 147, 249, 205))\n"
-"\n"
-";\n"
-"\n"
+        self.image_ratio_combo = QtWidgets.QComboBox(self.frame_3)
+        self.image_ratio_combo.setGeometry(QtCore.QRect(180, 480, 171, 22))
+        self.image_ratio_combo.setStyleSheet("background:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.995412, y2:1, stop:0 rgba(40, 42, 54, 265), stop:1 rgba(189, 147, 249, 205));\n"
 "selection-background-color:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.997, y2:1, stop:0 rgba(158, 29, 145, 167), stop:0.90899 rgba(51, 63, 26, 255), stop:1 rgba(15, 44, 41, 255));\n"
-"\n"
 "color:#f8f8f2;")
-        self.comboBox_3.setObjectName("comboBox_3")
-        self.comboBox_3.addItem("")
+        self.image_ratio_combo.setObjectName("image_ratio_combo")
+        self.image_ratio_combo.addItem("")
         self.label_18 = QtWidgets.QLabel(self.frame_3)
         self.label_18.setEnabled(True)
         self.label_18.setGeometry(QtCore.QRect(40, 440, 91, 21))
@@ -321,10 +302,10 @@ class Ui_MainWindow(object):
 "border:3px solid qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(129, 0, 158, 167), stop:1 rgba(255, 255, 255, 255));\n"
 "")
         self.pushButton_7.setObjectName("pushButton_7")
-        self.horizontalSlider = QtWidgets.QSlider(self.frame_3)
-        self.horizontalSlider.setGeometry(QtCore.QRect(10, 310, 191, 22))
-        self.horizontalSlider.setOrientation(QtCore.Qt.Horizontal)
-        self.horizontalSlider.setObjectName("horizontalSlider")
+        self.overylay_percentage_slider = QtWidgets.QSlider(self.frame_3)
+        self.overylay_percentage_slider.setGeometry(QtCore.QRect(10, 310, 191, 22))
+        self.overylay_percentage_slider.setOrientation(QtCore.Qt.Horizontal)
+        self.overylay_percentage_slider.setObjectName("overylay_percentage_slider")
         self.label_7 = QtWidgets.QLabel(self.frame_3)
         self.label_7.setGeometry(QtCore.QRect(10, 270, 141, 21))
         self.label_7.setStyleSheet("color:white;")
@@ -347,28 +328,21 @@ class Ui_MainWindow(object):
         self.label_10.setGeometry(QtCore.QRect(240, 520, 101, 20))
         self.label_10.setStyleSheet("color: #ff5555 ;")
         self.label_10.setObjectName("label_10")
-        self.comboBox_4 = QtWidgets.QComboBox(self.frame_3)
-        self.comboBox_4.setGeometry(QtCore.QRect(10, 480, 151, 22))
-        self.comboBox_4.setStyleSheet("\n"
-"background:\n"
-"\n"
-"qlineargradient(spread:repeat, x1:0, y1:0, x2:0.995412, y2:1, stop:0 rgba(40, 42, 54, 265), stop:1 rgba(189, 147, 249, 205))\n"
-"\n"
-";\n"
-"\n"
+        self.image_extension_filter_combo = QtWidgets.QComboBox(self.frame_3)
+        self.image_extension_filter_combo.setGeometry(QtCore.QRect(10, 480, 151, 22))
+        self.image_extension_filter_combo.setStyleSheet("background:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.995412, y2:1, stop:0 rgba(40, 42, 54, 265), stop:1 rgba(189, 147, 249, 205));\n"
 "selection-background-color:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.997, y2:1, stop:0 rgba(158, 29, 145, 167), stop:0.90899 rgba(51, 63, 26, 255), stop:1 rgba(15, 44, 41, 255));\n"
-"\n"
 "color:white;\n"
 "font-family:Times New Roman;\n"
 "font-size:13px;\n"
 "\n"
 "")
-        self.comboBox_4.setObjectName("comboBox_4")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
+        self.image_extension_filter_combo.setObjectName("image_extension_filter_combo")
+        self.image_extension_filter_combo.addItem("")
+        self.image_extension_filter_combo.addItem("")
+        self.image_extension_filter_combo.addItem("")
+        self.image_extension_filter_combo.addItem("")
+        self.image_extension_filter_combo.addItem("")
         self.label_13 = QtWidgets.QLabel(self.frame_3)
         self.label_13.setGeometry(QtCore.QRect(30, 20, 111, 21))
         self.label_13.setStyleSheet("color:white;\n"
@@ -387,10 +361,7 @@ class Ui_MainWindow(object):
         self.frameobj.addWidget(self.page_2)
         self.header_frame = QtWidgets.QFrame(self.frame)
         self.header_frame.setGeometry(QtCore.QRect(0, 30, 1221, 91))
-        self.header_frame.setStyleSheet("background:\n"
-"\n"
-"\n"
-"qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(133, 92, 158, 167), stop:1 rgba(44, 44, 44, 255))")
+        self.header_frame.setStyleSheet("background:qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(133, 92, 158, 167), stop:1 rgba(44, 44, 44, 255));")
         self.header_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.header_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.header_frame.setLineWidth(0)
@@ -461,7 +432,7 @@ class Ui_MainWindow(object):
         self.frame_2.setObjectName("frame_2")
         self.pushButton_4 = QtWidgets.QPushButton(self.frame_2)
         self.pushButton_4.setGeometry(QtCore.QRect(1170, 0, 51, 31))
-        self.pushButton_4.setStyleSheet("background:white;")
+        self.pushButton_4.setStyleSheet("background:black;")
         self.pushButton_4.setText("")
         icon4 = QtGui.QIcon()
         icon4.addPixmap(QtGui.QPixmap("res/Icons/red.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -481,7 +452,7 @@ class Ui_MainWindow(object):
         self.pushButton_9.setObjectName("pushButton_9")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1247, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1226, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -515,18 +486,18 @@ class Ui_MainWindow(object):
         self.comboBox_2.setItemText(0, _translate("MainWindow", "30 M"))
         self.comboBox_2.setItemText(1, _translate("MainWindow", "1.5 H"))
         self.comboBox_2.setItemText(2, _translate("MainWindow", "1 H"))
-        self.comboBox_3.setItemText(0, _translate("MainWindow", "1:1"))
+        self.image_ratio_combo.setItemText(0, _translate("MainWindow", "1:1"))
         self.label_18.setText(_translate("MainWindow", "Filter extensions"))
         self.label_5.setText(_translate("MainWindow", "Papers Shape :"))
         self.pushButton_7.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>Show changes on preview</p></body></html>"))
         self.pushButton_7.setText(_translate("MainWindow", "Show Preview"))
         self.label_7.setText(_translate("MainWindow", "Add Overlay"))
         self.label_10.setText(_translate("MainWindow", "* Only Works for ISB"))
-        self.comboBox_4.setItemText(0, _translate("MainWindow", "jpg"))
-        self.comboBox_4.setItemText(1, _translate("MainWindow", "png"))
-        self.comboBox_4.setItemText(2, _translate("MainWindow", "jpeg"))
-        self.comboBox_4.setItemText(3, _translate("MainWindow", "svg"))
-        self.comboBox_4.setItemText(4, _translate("MainWindow", "ico"))
+        self.image_extension_filter_combo.setItemText(0, _translate("MainWindow", "jpg"))
+        self.image_extension_filter_combo.setItemText(1, _translate("MainWindow", "png"))
+        self.image_extension_filter_combo.setItemText(2, _translate("MainWindow", "jpeg"))
+        self.image_extension_filter_combo.setItemText(3, _translate("MainWindow", "svg"))
+        self.image_extension_filter_combo.setItemText(4, _translate("MainWindow", "ico"))
         self.label_13.setText(_translate("MainWindow", "Next Wallpaper In:"))
         self.label_14.setText(_translate("MainWindow", "00:20:31"))
         self.comboBox.setItemText(0, _translate("MainWindow", " Select Profile"))

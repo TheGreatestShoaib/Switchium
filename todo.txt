@@ -3,14 +3,15 @@
 breakfast work :
 {
 
-fix the drag and drop effect from trialui.py
+fix the drag and drop effect from trialui.py [[ done ]]
+
 fix errors 
 apply backends to front end 
 
-
-works should be done :
 }
 
+
+works should be done tomorrow :
 {
 optimize background run 
 fix file structures
