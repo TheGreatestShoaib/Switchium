@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import QApplication, QWidget
 import sys
 from data_maker import *
 from src import Ui_MainWindow
-from PyQt5.QtWidgets import QApplication, QWidget, QInputDialog, QLineEdit, QFileDialog
+from PyQt5.QtWidgets import QApplication, QWidget, QInputDialog, QLineEdit, QFileDialog ,QColorDialog
 import CoreUtils as cu
 
 class StartQT4(QtWidgets.QMainWindow):
@@ -20,7 +20,7 @@ class StartQT4(QtWidgets.QMainWindow):
         
     def dialog(self):
         options = QFileDialog.Options()
-        #options |= QFileDialog.DontUseNativeDialog
+        options |= QFileDialog.DontUseNativeDialog
         files, _ =  QFileDialog.getOpenFileNames(self,"QFileDialog.getOpenFileNames()", "","All Files (*);;Python Files (*.py)", options=options)
         #files = QFileDialog.getExistingDirectory(self, 'Select an awesome directory')
         if files:
@@ -35,6 +35,15 @@ class StartQT4(QtWidgets.QMainWindow):
 
 
 
+
+
+    def color_dialog(self):
+        color = QColorDialog.getColor()
+
+
+        if color.isValid():
+            return color.name()
+
     def __init__(self, parent=None):
         QtWidgets.QWidget.__init__(self, parent)
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
@@ -44,7 +53,8 @@ class StartQT4(QtWidgets.QMainWindow):
         self.ui.pushButton_4.clicked.connect(self.CloseApp)
         #QtCore.qInstallMessageHandler(self.handler)
         self.ui.pushButton.clicked.connect(self.dialog)
-
+        self.ui.pushButton_2.clicked.connect(self.color_dialog)
+        self.ui.pushButton_3.clicked.connect(self.color_dialog)
 
         #self.clicked = False
         self.ui.frame_2.clicked = False
@@ -64,6 +74,8 @@ class StartQT4(QtWidgets.QMainWindow):
         self.old_pos = event.screenPos()
         #self.clicked = True
         self.ui.frame_2.clicked = True
+
+        
 
         return QWidget.mouseMoveEvent(self, event)
 
