@@ -1,6 +1,5 @@
 {
-  "active_profile":"dir_test",
-
+  "active_profile": "dir_test",
   "profile1": {
     "mode": "single",
     "file_name": "horahora.jpg",
@@ -10,10 +9,17 @@
     "instant_skip": true
   },
   "new__test22": {
-    "mode": "single",
+    "mode": "multiple",
     "file_name": "horahora.jpg",
     "file_size": "129KB",
-    "file_path": "D:\\py_codes\\Ashen Transistor\\wallpapers\\manjaro.png",
+    "file_path": [
+      "D:/py_codes/Ashen Transistor/wallpapers/9c8496bdcf9e070d75945371f0704d1d.jpg",
+      "D:/py_codes/Ashen Transistor/wallpapers/75677.gif",
+      "D:/py_codes/Ashen Transistor/wallpapers/124257240_3161320557306202_7239468197628284308_o.jpg",
+      "D:/py_codes/Ashen Transistor/wallpapers/240947770_1098839513855940_8559387054573194912_n.jpg",
+      "D:/py_codes/Ashen Transistor/wallpapers/arch.png",
+      "D:/py_codes/Ashen Transistor/wallpapers/artix.png"
+    ],
     "set_time": 10,
     "instant_skip": true
   },
@@ -30,6 +36,14 @@
       "D:\\py_codes\\Ashen Transistor\\wallpapers\\wp7758015.jpg",
       "D:\\py_codes\\Ashen Transistor\\wallpapers\\arch.png"
     ],
+    "set_time": 10,
+    "instant_skip": true
+  },
+  "bruh_mine": {
+    "mode": "single",
+    "file_name": "horahora.jpg",
+    "file_size": "129KB",
+    "file_path": "D:/py_codes/Ashen Transistor/damnit.py",
     "set_time": 10,
     "instant_skip": true
   }

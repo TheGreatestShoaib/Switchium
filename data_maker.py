@@ -4,19 +4,6 @@ import os
 from pprint import pprint
 import CoreUtils as cu
 
-def directory_scrapper(selected_file_path):
-	allowed_extensions= ['/*.jpg', '/*.png']
-	file_paths = []
-	
-	for ext in allowed_extensions:
-		files = glob.glob(selected_file_path+ext)
-		file_paths.extend(files)
-	
-	for f in range(len(file_paths)):
-		file_paths[f] = os.path.abspath(file_paths[f])
-
-	return file_paths
-
 
 
 
@@ -33,16 +20,18 @@ data= {
 	}
 
 
+
+dirs = ['D:/py_codes/Ashen Transistor/changebg.py', 'D:/py_codes/Ashen Transistor/damnit.py', 'D:/py_codes/Ashen Transistor/data_maker.py', 'D:/py_codes/Ashen Transistor/get_date.py']
+
 def POST_data(selected_file_path,data):
+	#check_directory = len(selected_file_path) <= 1
 
-	check_directory = os.path.isdir(selected_file_path)
-
-	if check_directory:
-		file_paths = directory_scrapper(selected_file_path)
+	if not len(selected_file_path) <= 1:
+		file_paths = selected_file_path
 		data["mode"] = "multiple"
 		data["file_path"] = file_paths
 	else:
-		data["file_path"] = os.path.abspath(selected_file_path)
+		data["file_path"] = selected_file_path[0]
 	
 	return data
 

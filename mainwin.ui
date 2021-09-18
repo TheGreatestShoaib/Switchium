@@ -214,7 +214,7 @@ background: #282a36 ;
       <widget class="QPushButton" name="pushButton">
        <property name="geometry">
         <rect>
-         <x>570</x>
+         <x>580</x>
          <y>60</y>
          <width>131</width>
          <height>41</height>
@@ -236,7 +236,7 @@ border-radius:15px;</string>
        <property name="geometry">
         <rect>
          <x>70</x>
-         <y>250</y>
+         <y>290</y>
          <width>331</width>
          <height>201</height>
         </rect>
@@ -261,7 +261,7 @@ border-radius:3px;</string>
       <widget class="QLabel" name="label">
        <property name="geometry">
         <rect>
-         <x>60</x>
+         <x>40</x>
          <y>60</y>
          <width>491</width>
          <height>41</height>
@@ -282,8 +282,8 @@ border-radius:15px;</string>
       <widget class="QLabel" name="preview_text_label1">
        <property name="geometry">
         <rect>
-         <x>90</x>
-         <y>150</y>
+         <x>130</x>
+         <y>200</y>
          <width>151</width>
          <height>31</height>
         </rect>
@@ -329,8 +329,8 @@ background: #8be9fd;</string>
       <widget class="QLabel" name="label_8">
        <property name="geometry">
         <rect>
-         <x>40</x>
-         <y>210</y>
+         <x>60</x>
+         <y>250</y>
          <width>61</width>
          <height>16</height>
         </rect>
@@ -346,8 +346,8 @@ color: #ff79c6</string>
       <widget class="QLabel" name="label_9">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>240</y>
+         <x>20</x>
+         <y>290</y>
          <width>41</width>
          <height>21</height>
         </rect>
@@ -401,8 +401,8 @@ font-family:Georgia;</string>
       <widget class="QLabel" name="label_2">
        <property name="geometry">
         <rect>
-         <x>120</x>
-         <y>200</y>
+         <x>140</x>
+         <y>240</y>
          <width>201</width>
          <height>31</height>
         </rect>
@@ -421,7 +421,7 @@ font-family:Georgia;</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>270</y>
+         <y>330</y>
          <width>31</width>
          <height>171</height>
         </rect>
@@ -439,8 +439,8 @@ font-family:Georgia;</string>
       <widget class="QLabel" name="preview_label1_2">
        <property name="geometry">
         <rect>
-         <x>440</x>
-         <y>250</y>
+         <x>450</x>
+         <y>290</y>
          <width>331</width>
          <height>201</height>
         </rect>
@@ -465,8 +465,8 @@ border-radius:3px;</string>
       <widget class="QLabel" name="preview_text_label1_2">
        <property name="geometry">
         <rect>
-         <x>550</x>
-         <y>150</y>
+         <x>560</x>
+         <y>200</y>
          <width>151</width>
          <height>31</height>
         </rect>
@@ -971,6 +971,39 @@ font-family: Monospace;</string>
          <number>21</number>
         </property>
        </widget>
+      </widget>
+      <widget class="QCheckBox" name="checkBox">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>120</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:white;
+font-size:12px;</string>
+       </property>
+       <property name="text">
+        <string>Append</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="checkBox_2">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>120</y>
+         <width>91</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:white;</string>
+       </property>
+       <property name="text">
+        <string>TimeManual</string>
+       </property>
       </widget>
      </widget>
      <widget class="QWidget" name="page_2"/>

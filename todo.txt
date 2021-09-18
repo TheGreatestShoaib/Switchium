@@ -6,15 +6,19 @@ breakfast work :
 fix the drag and drop effect from trialui.py [[ done ]]
 
 fix errors 
-apply backends to front end 
+
+apply backends to front end [[done ]] 
+
+build backend for mainwindow functions 
 
 }
 
 
 works should be done tomorrow :
+
 {
-optimize background run 
-fix file structures
+optimize background run [[done]]
+fix file structures  
 }
 
 
