@@ -1,4 +1,4 @@
-#!/usr/bin/env pythonw
+
 
 from src import Ui_MainWindow as mainbox
 from PyQt5 import QtCore, QtGui, QtWidgets
@@ -8,7 +8,6 @@ from data_maker import *
 from src import Ui_MainWindow
 from PyQt5.QtWidgets import QApplication, QWidget, QInputDialog, QLineEdit, QFileDialog ,QColorDialog
 import CoreUtils as cu
-import ctypes
 
 class StartQT4(QtWidgets.QMainWindow):
     data= cu.find_key()
@@ -19,31 +18,24 @@ class StartQT4(QtWidgets.QMainWindow):
     #     return profiled_data
 
 
-    def screensize(self):
-        user32 = ctypes.windll.user32
-        screensize = user32.GetSystemMetrics(0), user32.GetSystemMetrics(1)
-
-        return screensize
 
 
     def minimize_app(self):
         self.showMinimized()
         
-   
     def dialog(self):
         options = QFileDialog.Options()
-        #options |= QFileDialog.DontUseNativeDialog
+        options |= QFileDialog.DontUseNativeDialog
         files, _ =  QFileDialog.getOpenFileNames(self,"QFileDialog.getOpenFileNames()", "","All Files (*);;Python Files (*.py)", options=options)
         #files = QFileDialog.getExistingDirectory(self, 'Select an awesome directory')
-        time_interval = self.ui.comboBox_2.currentText()
         if files:
             if len(files) <= 1:
-                saves =POST_data(files,self.data[self.ui.comboBox.currentText()],time_interval)
+                saves =POST_data(files,self.data[self.ui.comboBox.currentText()])
                 cu.dump_data(self.ui.comboBox.currentText(),saves)
                 #print(type(files))
             else:
                 #print(files)
-                saves = POST_data(files,self.data[self.ui.comboBox.currentText()],time_interval)
+                saves = POST_data(files,self.data[self.ui.comboBox.currentText()])
                 cu.dump_data(self.ui.comboBox.currentText(),saves)
 
 
@@ -83,14 +75,9 @@ class StartQT4(QtWidgets.QMainWindow):
         self.ui.pushButton_4.clicked.connect(self.CloseApp)
         #QtCore.qInstallMessageHandler(self.handler)
         self.ui.pushButton.clicked.connect(self.dialog)
-        self.ui.pushButton_2.clicked.connect(self.color_dialog_overlay)
+        self.ui.pushButton_2.clicked.connect(self.minimize_app)
         self.ui.pushButton_3.clicked.connect(self.color_dialog_overlay)
         self.ui.pushButton_9.clicked.connect(lambda: self.showMinimized())
-
-        self.ui.label_8.setText( f"   { self.screensize()[0] }")
-        self.ui.label_9.setText( f"{ self.screensize()[1] }")
-
-
 
         #self.clicked = False
         self.ui.frame_2.clicked = False

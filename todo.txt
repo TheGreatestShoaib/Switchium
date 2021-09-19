@@ -1,26 +1,34 @@
 
 
-breakfast work :
-{
-
-fix the drag and drop effect from trialui.py [[ done ]]
-
-fix errors 
-
-apply backends to front end [[done ]] 
-
-build backend for mainwindow functions 
+should be done ={
+get profiles name
+add profile feature
 
 }
 
 
-works should be done tomorrow :
-
-{
-optimize background run [[done]]
-fix file structures  
+leisure time works = {
+fix format names and layout names
+cleat code a little bit
 }
 
 
+real works = {
+
+time intervals settings --upcoming
+ext filters
+minimize options  --done
+change colors after color choosing --done
+get screen size show labels --done
+add append and automate functions in ui
+
+}
+
+
+
+upcoming = {
+show current and next wallpapers in 
+add threads to run timer
+}
 
 
