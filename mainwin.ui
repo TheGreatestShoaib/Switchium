@@ -211,7 +211,7 @@ background: #282a36 ;
       <number>0</number>
      </property>
      <widget class="QWidget" name="page">
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="set_wallpaper_btn">
        <property name="geometry">
         <rect>
          <x>580</x>
@@ -232,7 +232,7 @@ border-radius:15px;</string>
         <string>Select Wallapaper</string>
        </property>
       </widget>
-      <widget class="QLabel" name="preview_label1">
+      <widget class="QLabel" name="upcoming_wallpaper">
        <property name="geometry">
         <rect>
          <x>70</x>
@@ -360,7 +360,7 @@ color: #8be9fd</string>
         <string>1080</string>
        </property>
       </widget>
-      <widget class="QLabel" name="instruction_message1">
+      <widget class="QLabel" name="instruction_message">
        <property name="geometry">
         <rect>
          <x>30</x>
@@ -436,7 +436,7 @@ font-family:Georgia;</string>
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QLabel" name="preview_label1_2">
+      <widget class="QLabel" name="next_wallpaper">
        <property name="geometry">
         <rect>
          <x>450</x>
@@ -486,7 +486,7 @@ font-family:Georgia;
         <number>22</number>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_8">
+      <widget class="QPushButton" name="apply_btn">
        <property name="geometry">
         <rect>
          <x>660</x>
@@ -536,7 +536,7 @@ border:3px solid qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:1, stop:0 r
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="solid_back_color_btn">
         <property name="geometry">
          <rect>
           <x>260</x>
@@ -571,7 +571,7 @@ background:cyan;</string>
          <string>Use Solid color</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_3">
+       <widget class="QPushButton" name="overlay_color_btn">
         <property name="geometry">
          <rect>
           <x>260</x>
@@ -609,7 +609,7 @@ background:cyan;</string>
          <string>Set Interval :</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_2">
+       <widget class="QComboBox" name="time_set_combo">
         <property name="enabled">
          <bool>true</bool>
         </property>
@@ -708,7 +708,7 @@ selection-background-color: qlineargradient(spread:repeat, x1:0, y1:0, x2:0.997,
          <enum>Qt::Horizontal</enum>
         </property>
        </widget>
-       <widget class="QComboBox" name="image_ratio_combo">
+       <widget class="QComboBox" name="img_ratio_combo">
         <property name="geometry">
          <rect>
           <x>180</x>
@@ -782,7 +782,7 @@ color:#f8f8f2;</string>
          <enum>Qt::Horizontal</enum>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_7">
+       <widget class="QPushButton" name="show_preview_btn">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -889,7 +889,7 @@ border:3px solid qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:1, stop:0 r
          <string>* Only Works for ISB</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="image_extension_filter_combo">
+       <widget class="QComboBox" name="filter_ext_combo">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -975,7 +975,7 @@ font-family: Monospace;</string>
       <widget class="QCheckBox" name="checkBox">
        <property name="geometry">
         <rect>
-         <x>50</x>
+         <x>60</x>
          <y>120</y>
          <width>91</width>
          <height>31</height>
@@ -992,8 +992,8 @@ font-size:12px;</string>
       <widget class="QCheckBox" name="checkBox_2">
        <property name="geometry">
         <rect>
-         <x>430</x>
-         <y>120</y>
+         <x>420</x>
+         <y>130</y>
          <width>91</width>
          <height>17</height>
         </rect>
@@ -1029,7 +1029,7 @@ font-size:12px;</string>
      <property name="lineWidth">
       <number>0</number>
      </property>
-     <widget class="QComboBox" name="comboBox">
+     <widget class="QComboBox" name="select_profile_combo">
       <property name="geometry">
        <rect>
         <x>1030</x>
@@ -1065,6 +1065,9 @@ selection-background-color:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.997, 
       <property name="insertPolicy">
        <enum>QComboBox::InsertAtCurrent</enum>
       </property>
+      <property name="duplicatesEnabled">
+       <bool>true</bool>
+      </property>
       <property name="frame">
        <bool>true</bool>
       </property>
@@ -1094,7 +1097,7 @@ selection-background-color:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.997, 
        </property>
       </item>
      </widget>
-     <widget class="QPushButton" name="pushButton_5">
+     <widget class="QPushButton" name="create_profile_btn">
       <property name="geometry">
        <rect>
         <x>300</x>

@@ -4,11 +4,11 @@ should be done ={
 get profiles name
 add profile feature
 
-}
+} -- done
 
 
 leisure time works = {
-fix format names and layout names
+fix format names and layout names -- kinda done
 cleat code a little bit
 }
 
@@ -16,7 +16,7 @@ cleat code a little bit
 real works = {
 
 time intervals settings --upcoming
-ext filters
+ext filters -- almost done
 minimize options  --done
 change colors after color choosing --done
 get screen size show labels --done

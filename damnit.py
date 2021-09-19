@@ -10,13 +10,30 @@ from PyQt5.QtWidgets import QApplication, QWidget, QInputDialog, QLineEdit, QFil
 import CoreUtils as cu
 import ctypes
 
-class StartQT4(QtWidgets.QMainWindow):
+class Switchium_Main_Window(QtWidgets.QMainWindow):
     data= cu.find_key()
     #profiled_data = data[self.comboBox.currentText()]
     
     # def return_val(self):
     #     profiled_data = self.data[self.comboBox.currentText()]
     #     return profiled_data
+
+    profile_count = 0
+
+    def create_profile(self):
+        text = self.ui.lineEdit.text()
+        cu.dump_data(text,cu.dummy_data)
+        self.ui.lineEdit.clear()
+        self.show_profile_names()
+
+
+    def show_profile_names(self):
+        for usr_profile in self.data.keys():
+            if usr_profile == "active_profile":
+                pass
+            else:
+                self.ui.comboBox.setItemText(self.profile_count,usr_profile)
+                self.profile_count +=1
 
 
     def screensize(self):
@@ -25,52 +42,20 @@ class StartQT4(QtWidgets.QMainWindow):
 
         return screensize
 
-
-    def minimize_app(self):
-        self.showMinimized()
         
    
     def dialog(self):
         options = QFileDialog.Options()
-        #options |= QFileDialog.DontUseNativeDialog
         files, _ =  QFileDialog.getOpenFileNames(self,"QFileDialog.getOpenFileNames()", "","All Files (*);;Python Files (*.py)", options=options)
-        #files = QFileDialog.getExistingDirectory(self, 'Select an awesome directory')
         time_interval = self.ui.comboBox_2.currentText()
         if files:
             if len(files) <= 1:
                 saves =POST_data(files,self.data[self.ui.comboBox.currentText()],time_interval)
                 cu.dump_data(self.ui.comboBox.currentText(),saves)
-                #print(type(files))
             else:
-                #print(files)
                 saves = POST_data(files,self.data[self.ui.comboBox.currentText()],time_interval)
                 cu.dump_data(self.ui.comboBox.currentText(),saves)
 
-
-
-
-
-    def color_dialog_bg(self):
-        color = QColorDialog.getColor()
-
-
-        if color.isValid():
-            #print(color.name())
-            self.ui.pushButton_2.setStyleSheet("\n"
-            "border:5px solid #44475a;\n"
-            "border-radius:45px;\n"
-            f"background:{color.name()};")
-
-    def color_dialog_overlay(self):
-        color = QColorDialog.getColor()
-
-
-        if color.isValid():
-            #print(color.name())
-            self.ui.pushButton_3.setStyleSheet("\n"
-                "border:2px solid #44475a;\n"
-                "border-radius:25px;\n"
-                f"background:{color.name()};")
 
 
 
@@ -79,24 +64,31 @@ class StartQT4(QtWidgets.QMainWindow):
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        #self.ui.pushButton_8.clicked.connect(self.printer)
-        self.ui.pushButton_4.clicked.connect(self.CloseApp)
-        #QtCore.qInstallMessageHandler(self.handler)
+
+
+        #connect functions with buttons
+
+        self.ui.pushButton_4.clicked.connect(lambda : QApplication. quit()) #functions for exit 
+        self.ui.pushButton_9.clicked.connect(lambda: self.showMinimized()) #lambda fucntion to minimize window
+        
         self.ui.pushButton.clicked.connect(self.dialog)
         self.ui.pushButton_2.clicked.connect(self.color_dialog_overlay)
         self.ui.pushButton_3.clicked.connect(self.color_dialog_overlay)
-        self.ui.pushButton_9.clicked.connect(lambda: self.showMinimized())
+       
 
+       
         self.ui.label_8.setText( f"   { self.screensize()[0] }")
         self.ui.label_9.setText( f"{ self.screensize()[1] }")
+        self.ui.pushButton_5.clicked.connect(self.create_profile)
+        self.ui.image_extension_filter_combo.currentIndexChanged.connect(self.filter_extensions)
+        #show profile names according to profile counts
+
+
 
 
 
         #self.clicked = False
         self.ui.frame_2.clicked = False
-
-    def CloseApp(self):
-        QApplication. quit()
 
     def mousePressEvent(self, event):
         self.old_pos = event.screenPos()
@@ -115,9 +107,43 @@ class StartQT4(QtWidgets.QMainWindow):
 
         return QWidget.mouseMoveEvent(self, event)
 
+
+
+    def filter_extensions(self):
+        #filter the extensions here with json 
+        print(self.ui.image_extension_filter_combo.currentText() )
+
+
+    def color_dialog_bg(self):
+        color = QColorDialog.getColor()
+
+
+        if color.isValid():
+            #print(color.name())
+            self.ui.pushButton_2.setStyleSheet("\n"
+            "border:5px solid #44475a;\n"
+            "border-radius:45px;\n"
+            f"background:{color.name()};")
+
+
+
+    def color_dialog_overlay(self):
+        color = QColorDialog.getColor()
+
+
+        if color.isValid():
+            #print(color.name())
+            self.ui.pushButton_3.setStyleSheet("\n"
+                "border:2px solid #44475a;\n"
+                "border-radius:25px;\n"
+                f"background:{color.name()};")
+
+
+
+
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
-    myapp = StartQT4()
+    myapp = Switchium_Main_Window()
 
     myapp.show()
     sys.exit(app.exec_())
