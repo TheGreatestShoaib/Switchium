@@ -2,11 +2,29 @@
   "active_profile": "dir_test",
   "new__test22": {
     "mode": "multiple",
-    "file_path": "D:/py_codes/Ashen Transistor/wallpapers/pYF2LX.jpg",
-    "set_time": "1.5 H",
+    "file_path": [
+      "D:/py_codes/Ashen Transistor/wallpapers/124257240_3161320557306202_7239468197628284308_o.jpg",
+      "D:/py_codes/Ashen Transistor/wallpapers/240947770_1098839513855940_8559387054573194912_n.jpg",
+      "D:/py_codes/Ashen Transistor/wallpapers/arch.png",
+      "D:/py_codes/Ashen Transistor/wallpapers/artix.png",
+      "D:/py_codes/Ashen Transistor/wallpapers/download (1).jpg"
+    ],
+    "set_time": "1 H",
     "instant_skip": true
   },
-  "trying_out_new_data": {
+  "bruh_tested_new_data": {
+    "mode": "",
+    "file_path": "",
+    "set_time": "",
+    "instant_skip": " "
+  },
+  "hehe_boi": {
+    "mode": "",
+    "file_path": "",
+    "set_time": "",
+    "instant_skip": " "
+  },
+  "heheboi": {
     "mode": "",
     "file_path": "",
     "set_time": "",

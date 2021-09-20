@@ -1,5 +1,15 @@
-
 {
-	"filtered_extensions":["gif","tiff"],
-	"Allowed_extensions":["jpeg","png","jpg"],
+  "filtered_extensions": [
+    ""
+  ],
+  "allowed_extensions": [
+    "gif",
+    "svg",
+    "tiff",
+    "ico",
+    "ico",
+    "png",
+    "jpeg",
+    "jpg"
+  ]
 }

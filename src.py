@@ -33,7 +33,7 @@ class Ui_MainWindow(object):
         self.frame.setObjectName("frame")
         self.footer_frame = QtWidgets.QFrame(self.frame)
         self.footer_frame.setGeometry(QtCore.QRect(0, 700, 1221, 91))
-        self.footer_frame.setStyleSheet("background:rgb(10, 170, 155);\n"
+        self.footer_frame.setStyleSheet("background:rgb(0, 170, 155);\n"
 "background: #6272a4 ;")
         self.footer_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.footer_frame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -93,26 +93,26 @@ class Ui_MainWindow(object):
         self.frameobj.setObjectName("frameobj")
         self.page = QtWidgets.QWidget()
         self.page.setObjectName("page")
-        self.pushButton = QtWidgets.QPushButton(self.page)
-        self.pushButton.setGeometry(QtCore.QRect(570, 60, 131, 41))
-        self.pushButton.setStyleSheet("background:    #44475a        ;\n"
+        self.set_wallpaper_btn = QtWidgets.QPushButton(self.page)
+        self.set_wallpaper_btn.setGeometry(QtCore.QRect(580, 60, 131, 41))
+        self.set_wallpaper_btn.setStyleSheet("background:    #44475a        ;\n"
 "color: #f8f8f2 ;\n"
 "font-size:13px;\n"
 "font-family:Georgia;\n"
 "\n"
 "border-radius:15px;")
-        self.pushButton.setObjectName("pushButton")
-        self.preview_label1 = QtWidgets.QLabel(self.page)
-        self.preview_label1.setGeometry(QtCore.QRect(70, 250, 331, 201))
-        self.preview_label1.setAcceptDrops(True)
-        self.preview_label1.setStyleSheet("border:4px solid white;\n"
+        self.set_wallpaper_btn.setObjectName("set_wallpaper_btn")
+        self.upcoming_wallpaper = QtWidgets.QLabel(self.page)
+        self.upcoming_wallpaper.setGeometry(QtCore.QRect(70, 290, 331, 201))
+        self.upcoming_wallpaper.setAcceptDrops(True)
+        self.upcoming_wallpaper.setStyleSheet("border:4px solid white;\n"
 "border-radius:3px;")
-        self.preview_label1.setText("")
-        self.preview_label1.setPixmap(QtGui.QPixmap("../../java_codes/124257240_3161320557306202_7239468197628284308_o.jpg"))
-        self.preview_label1.setScaledContents(True)
-        self.preview_label1.setObjectName("preview_label1")
+        self.upcoming_wallpaper.setText("")
+        self.upcoming_wallpaper.setPixmap(QtGui.QPixmap("../../java_codes/124257240_3161320557306202_7239468197628284308_o.jpg"))
+        self.upcoming_wallpaper.setScaledContents(True)
+        self.upcoming_wallpaper.setObjectName("upcoming_wallpaper")
         self.label = QtWidgets.QLabel(self.page)
-        self.label.setGeometry(QtCore.QRect(60, 60, 491, 41))
+        self.label.setGeometry(QtCore.QRect(40, 60, 491, 41))
         self.label.setStyleSheet("background:#44475a;\n"
 "color:#f8f8f2;\n"
 "font-size:18px;\n"
@@ -121,7 +121,7 @@ class Ui_MainWindow(object):
 "border-radius:15px;")
         self.label.setObjectName("label")
         self.preview_text_label1 = QtWidgets.QLabel(self.page)
-        self.preview_text_label1.setGeometry(QtCore.QRect(90, 150, 151, 31))
+        self.preview_text_label1.setGeometry(QtCore.QRect(130, 200, 151, 31))
         self.preview_text_label1.setStyleSheet("background:transparent;\n"
 "color:white;\n"
 "font-size:17px;\n"
@@ -139,23 +139,23 @@ class Ui_MainWindow(object):
         self.line.setFrameShape(QtWidgets.QFrame.VLine)
         self.line.setObjectName("line")
         self.label_8 = QtWidgets.QLabel(self.page)
-        self.label_8.setGeometry(QtCore.QRect(40, 210, 61, 16))
+        self.label_8.setGeometry(QtCore.QRect(60, 250, 61, 16))
         self.label_8.setStyleSheet("font-size:18px;\n"
 "color: #ff79c6")
         self.label_8.setObjectName("label_8")
         self.label_9 = QtWidgets.QLabel(self.page)
-        self.label_9.setGeometry(QtCore.QRect(10, 240, 41, 21))
+        self.label_9.setGeometry(QtCore.QRect(20, 290, 41, 21))
         self.label_9.setStyleSheet("font-size:18px;\n"
 "color: #8be9fd")
         self.label_9.setObjectName("label_9")
-        self.instruction_message1 = QtWidgets.QLabel(self.page)
-        self.instruction_message1.setGeometry(QtCore.QRect(30, 10, 581, 21))
-        self.instruction_message1.setStyleSheet("color:#ffb86c;\n"
+        self.instruction_message = QtWidgets.QLabel(self.page)
+        self.instruction_message.setGeometry(QtCore.QRect(30, 10, 581, 21))
+        self.instruction_message.setStyleSheet("color:#ffb86c;\n"
 "font-size:15px;\n"
 "font-family:Georgia;\n"
 "\n"
 "")
-        self.instruction_message1.setObjectName("instruction_message1")
+        self.instruction_message.setObjectName("instruction_message")
         self.highlightor_star1 = QtWidgets.QLabel(self.page)
         self.highlightor_star1.setGeometry(QtCore.QRect(0, 10, 31, 21))
         self.highlightor_star1.setStyleSheet("color:red;\n"
@@ -163,28 +163,28 @@ class Ui_MainWindow(object):
 "font-family:Georgia;")
         self.highlightor_star1.setObjectName("highlightor_star1")
         self.label_2 = QtWidgets.QLabel(self.page)
-        self.label_2.setGeometry(QtCore.QRect(120, 200, 201, 31))
+        self.label_2.setGeometry(QtCore.QRect(140, 240, 201, 31))
         self.label_2.setText("")
         self.label_2.setPixmap(QtGui.QPixmap("res/Icons/horizontalarrow.png"))
         self.label_2.setScaledContents(True)
         self.label_2.setObjectName("label_2")
         self.label_4 = QtWidgets.QLabel(self.page)
-        self.label_4.setGeometry(QtCore.QRect(20, 270, 31, 171))
+        self.label_4.setGeometry(QtCore.QRect(20, 330, 31, 171))
         self.label_4.setText("")
         self.label_4.setPixmap(QtGui.QPixmap("res/Icons/verticalarrow.png"))
         self.label_4.setScaledContents(True)
         self.label_4.setObjectName("label_4")
-        self.preview_label1_2 = QtWidgets.QLabel(self.page)
-        self.preview_label1_2.setGeometry(QtCore.QRect(440, 250, 331, 201))
-        self.preview_label1_2.setAcceptDrops(True)
-        self.preview_label1_2.setStyleSheet("border:4px solid white;\n"
+        self.next_wallpaper = QtWidgets.QLabel(self.page)
+        self.next_wallpaper.setGeometry(QtCore.QRect(450, 290, 331, 201))
+        self.next_wallpaper.setAcceptDrops(True)
+        self.next_wallpaper.setStyleSheet("border:4px solid white;\n"
 "border-radius:3px;")
-        self.preview_label1_2.setText("")
-        self.preview_label1_2.setPixmap(QtGui.QPixmap("../../java_codes/65445-cyberpunk-748x468.jpg"))
-        self.preview_label1_2.setScaledContents(True)
-        self.preview_label1_2.setObjectName("preview_label1_2")
+        self.next_wallpaper.setText("")
+        self.next_wallpaper.setPixmap(QtGui.QPixmap("../../java_codes/65445-cyberpunk-748x468.jpg"))
+        self.next_wallpaper.setScaledContents(True)
+        self.next_wallpaper.setObjectName("next_wallpaper")
         self.preview_text_label1_2 = QtWidgets.QLabel(self.page)
-        self.preview_text_label1_2.setGeometry(QtCore.QRect(550, 150, 151, 31))
+        self.preview_text_label1_2.setGeometry(QtCore.QRect(560, 200, 151, 31))
         self.preview_text_label1_2.setStyleSheet("background : transparent;\n"
 "color: #f8f8f2 ;\n"
 "font-size:17px;\n"
@@ -193,62 +193,62 @@ class Ui_MainWindow(object):
 "")
         self.preview_text_label1_2.setIndent(22)
         self.preview_text_label1_2.setObjectName("preview_text_label1_2")
-        self.pushButton_8 = QtWidgets.QPushButton(self.page)
-        self.pushButton_8.setGeometry(QtCore.QRect(660, 520, 141, 41))
-        self.pushButton_8.setStyleSheet("background:transparent;\n"
+        self.apply_btn = QtWidgets.QPushButton(self.page)
+        self.apply_btn.setGeometry(QtCore.QRect(660, 520, 141, 41))
+        self.apply_btn.setStyleSheet("background:transparent;\n"
 "color:white;\n"
 "font-size:12px;\n"
 "font-family:Georgia;\n"
-"border:3px solid qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(129, 10, 158, 167), stop:1 rgba(253, 253, 253, 253));\n"
+"border:3px solid qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(129, 0, 158, 167), stop:1 rgba(255, 255, 255, 255));\n"
 "\n"
 "")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("res/Icons/save-icon-256-684454913.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_8.setIcon(icon)
-        self.pushButton_8.setIconSize(QtCore.QSize(22, 21))
-        self.pushButton_8.setObjectName("pushButton_8")
+        self.apply_btn.setIcon(icon)
+        self.apply_btn.setIconSize(QtCore.QSize(22, 21))
+        self.apply_btn.setObjectName("apply_btn")
         self.frame_3 = QtWidgets.QFrame(self.page)
         self.frame_3.setGeometry(QtCore.QRect(850, 20, 361, 541))
         self.frame_3.setStyleSheet("")
         self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_3.setObjectName("frame_3")
-        self.pushButton_2 = QtWidgets.QPushButton(self.frame_3)
-        self.pushButton_2.setGeometry(QtCore.QRect(260, 60, 91, 91))
-        self.pushButton_2.setStyleSheet("\n"
+        self.solid_back_color_btn = QtWidgets.QPushButton(self.frame_3)
+        self.solid_back_color_btn.setGeometry(QtCore.QRect(260, 60, 91, 91))
+        self.solid_back_color_btn.setStyleSheet("\n"
 "border:5px solid #44475a;\n"
 "border-radius:45px;\n"
 "background:cyan;")
-        self.pushButton_2.setObjectName("pushButton_2")
+        self.solid_back_color_btn.setObjectName("solid_back_color_btn")
         self.label_3 = QtWidgets.QLabel(self.frame_3)
         self.label_3.setGeometry(QtCore.QRect(270, 20, 91, 21))
         self.label_3.setStyleSheet("color:white;")
         self.label_3.setObjectName("label_3")
-        self.pushButton_3 = QtWidgets.QPushButton(self.frame_3)
-        self.pushButton_3.setGeometry(QtCore.QRect(260, 310, 61, 61))
-        self.pushButton_3.setStyleSheet("\n"
+        self.overlay_color_btn = QtWidgets.QPushButton(self.frame_3)
+        self.overlay_color_btn.setGeometry(QtCore.QRect(260, 310, 61, 61))
+        self.overlay_color_btn.setStyleSheet("\n"
 "border:2px solid #44475a;\n"
 "border-radius:25px;\n"
 "background:cyan;")
-        self.pushButton_3.setObjectName("pushButton_3")
+        self.overlay_color_btn.setObjectName("overlay_color_btn")
         self.label_6 = QtWidgets.QLabel(self.frame_3)
         self.label_6.setEnabled(True)
         self.label_6.setGeometry(QtCore.QRect(20, 210, 101, 21))
         self.label_6.setStyleSheet("color:white;")
         self.label_6.setObjectName("label_6")
-        self.comboBox_2 = QtWidgets.QComboBox(self.frame_3)
-        self.comboBox_2.setEnabled(True)
-        self.comboBox_2.setGeometry(QtCore.QRect(160, 210, 171, 22))
-        self.comboBox_2.setStyleSheet("color:white;\n"
+        self.time_set_combo = QtWidgets.QComboBox(self.frame_3)
+        self.time_set_combo.setEnabled(True)
+        self.time_set_combo.setGeometry(QtCore.QRect(160, 210, 171, 22))
+        self.time_set_combo.setStyleSheet("color:white;\n"
 "background:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.997, y2:1, stop:0 rgba(158, 29, 145, 167), stop:0.90899 rgba(51, 63, 26, 255), stop:1 rgba(15, 44, 41, 255));\n"
 "selection-background-color: qlineargradient(spread:repeat, x1:0, y1:0, x2:0.997, y2:1, stop:0 rgba(158, 29, 145, 167), stop:0.90899 rgba(51, 63, 26, 255), stop:1 rgba(15, 44, 41, 255));")
-        self.comboBox_2.setMaxVisibleItems(5)
-        self.comboBox_2.setDuplicatesEnabled(False)
-        self.comboBox_2.setFrame(False)
-        self.comboBox_2.setObjectName("comboBox_2")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
+        self.time_set_combo.setMaxVisibleItems(5)
+        self.time_set_combo.setDuplicatesEnabled(False)
+        self.time_set_combo.setFrame(False)
+        self.time_set_combo.setObjectName("time_set_combo")
+        self.time_set_combo.addItem("")
+        self.time_set_combo.addItem("")
+        self.time_set_combo.addItem("")
         self.line_5 = QtWidgets.QFrame(self.frame_3)
         self.line_5.setGeometry(QtCore.QRect(-10, 400, 371, 20))
         self.line_5.setLineWidth(3)
@@ -270,17 +270,17 @@ class Ui_MainWindow(object):
         self.line_6.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_6.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_6.setObjectName("line_6")
-        self.image_ratio_combo = QtWidgets.QComboBox(self.frame_3)
-        self.image_ratio_combo.setGeometry(QtCore.QRect(180, 480, 171, 22))
-        self.image_ratio_combo.setStyleSheet("background:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.995412, y2:1, stop:0 rgba(40, 42, 54, 265), stop:1 rgba(189, 147, 249, 205));\n"
+        self.img_ratio_combo = QtWidgets.QComboBox(self.frame_3)
+        self.img_ratio_combo.setGeometry(QtCore.QRect(180, 480, 171, 22))
+        self.img_ratio_combo.setStyleSheet("background:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.995412, y2:1, stop:0 rgba(40, 42, 54, 265), stop:1 rgba(189, 147, 249, 205));\n"
 "selection-background-color:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.997, y2:1, stop:0 rgba(158, 29, 145, 167), stop:0.90899 rgba(51, 63, 26, 255), stop:1 rgba(15, 44, 41, 255));\n"
 "color:#f8f8f2;")
-        self.image_ratio_combo.setObjectName("image_ratio_combo")
-        self.image_ratio_combo.addItem("")
+        self.img_ratio_combo.setObjectName("img_ratio_combo")
+        self.img_ratio_combo.addItem("")
         self.label_18 = QtWidgets.QLabel(self.frame_3)
         self.label_18.setEnabled(True)
         self.label_18.setGeometry(QtCore.QRect(40, 440, 91, 21))
-        self.label_18.setStyleSheet("co:white;")
+        self.label_18.setStyleSheet("color:white;")
         self.label_18.setObjectName("label_18")
         self.label_5 = QtWidgets.QLabel(self.frame_3)
         self.label_5.setGeometry(QtCore.QRect(230, 440, 81, 16))
@@ -293,15 +293,15 @@ class Ui_MainWindow(object):
         self.line_3.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_3.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_3.setObjectName("line_3")
-        self.pushButton_7 = QtWidgets.QPushButton(self.frame_3)
-        self.pushButton_7.setGeometry(QtCore.QRect(10, 360, 111, 31))
-        self.pushButton_7.setStyleSheet("background:transparent;\n"
+        self.show_preview_btn = QtWidgets.QPushButton(self.frame_3)
+        self.show_preview_btn.setGeometry(QtCore.QRect(10, 360, 111, 31))
+        self.show_preview_btn.setStyleSheet("background:transparent;\n"
 "color:white;\n"
 "font-size:12px;\n"
 "font-family:Georgia;\n"
 "border:3px solid qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(129, 0, 158, 167), stop:1 rgba(255, 255, 255, 255));\n"
 "")
-        self.pushButton_7.setObjectName("pushButton_7")
+        self.show_preview_btn.setObjectName("show_preview_btn")
         self.overylay_percentage_slider = QtWidgets.QSlider(self.frame_3)
         self.overylay_percentage_slider.setGeometry(QtCore.QRect(10, 310, 191, 22))
         self.overylay_percentage_slider.setOrientation(QtCore.Qt.Horizontal)
@@ -328,21 +328,21 @@ class Ui_MainWindow(object):
         self.label_10.setGeometry(QtCore.QRect(240, 520, 101, 20))
         self.label_10.setStyleSheet("color: #ff5555 ;")
         self.label_10.setObjectName("label_10")
-        self.image_extension_filter_combo = QtWidgets.QComboBox(self.frame_3)
-        self.image_extension_filter_combo.setGeometry(QtCore.QRect(10, 480, 151, 22))
-        self.image_extension_filter_combo.setStyleSheet("background:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.995412, y2:1, stop:0 rgba(40, 42, 54, 265), stop:1 rgba(189, 147, 249, 205));\n"
+        self.filter_ext_combo = QtWidgets.QComboBox(self.frame_3)
+        self.filter_ext_combo.setGeometry(QtCore.QRect(10, 480, 151, 22))
+        self.filter_ext_combo.setStyleSheet("background:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.995412, y2:1, stop:0 rgba(40, 42, 54, 265), stop:1 rgba(189, 147, 249, 205));\n"
 "selection-background-color:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.997, y2:1, stop:0 rgba(158, 29, 145, 167), stop:0.90899 rgba(51, 63, 26, 255), stop:1 rgba(15, 44, 41, 255));\n"
 "color:white;\n"
 "font-family:Times New Roman;\n"
 "font-size:13px;\n"
 "\n"
 "")
-        self.image_extension_filter_combo.setObjectName("image_extension_filter_combo")
-        self.image_extension_filter_combo.addItem("")
-        self.image_extension_filter_combo.addItem("")
-        self.image_extension_filter_combo.addItem("")
-        self.image_extension_filter_combo.addItem("")
-        self.image_extension_filter_combo.addItem("")
+        self.filter_ext_combo.setObjectName("filter_ext_combo")
+        # self.filter_ext_combo.addItem("")
+        # self.filter_ext_combo.addItem("")
+        # self.filter_ext_combo.addItem("")
+        # self.filter_ext_combo.addItem("")
+        # self.filter_ext_combo.addItem("")
         self.label_13 = QtWidgets.QLabel(self.frame_3)
         self.label_13.setGeometry(QtCore.QRect(30, 20, 111, 21))
         self.label_13.setStyleSheet("color:white;\n"
@@ -355,6 +355,15 @@ class Ui_MainWindow(object):
 "font-family: Monospace;")
         self.label_14.setIndent(21)
         self.label_14.setObjectName("label_14")
+        self.checkBox = QtWidgets.QCheckBox(self.page)
+        self.checkBox.setGeometry(QtCore.QRect(60, 120, 91, 31))
+        self.checkBox.setStyleSheet("color:white;\n"
+"font-size:12px;")
+        self.checkBox.setObjectName("checkBox")
+        self.checkBox_2 = QtWidgets.QCheckBox(self.page)
+        self.checkBox_2.setGeometry(QtCore.QRect(420, 130, 91, 17))
+        self.checkBox_2.setStyleSheet("color:white;")
+        self.checkBox_2.setObjectName("checkBox_2")
         self.frameobj.addWidget(self.page)
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
@@ -366,9 +375,9 @@ class Ui_MainWindow(object):
         self.header_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.header_frame.setLineWidth(0)
         self.header_frame.setObjectName("header_frame")
-        self.comboBox = QtWidgets.QComboBox(self.header_frame)
-        self.comboBox.setGeometry(QtCore.QRect(1030, 10, 191, 31))
-        self.comboBox.setStyleSheet("\n"
+        self.select_profile_combo = QtWidgets.QComboBox(self.header_frame)
+        self.select_profile_combo.setGeometry(QtCore.QRect(1030, 10, 191, 31))
+        self.select_profile_combo.setStyleSheet("\n"
 "color:black;\n"
 "font-size:12px;\n"
 "font-family:Georgia;\n"
@@ -381,21 +390,22 @@ class Ui_MainWindow(object):
 "qlineargradient(spread:repeat, x1:0, y1:0, x2:0.997, y2:1, stop:0 rgba(158, 29, 145, 167), stop:0.90899 rgba(51, 63, 26, 255), stop:1 rgba(15, 44, 41, 255));\n"
 "\n"
 "selection-background-color:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.997, y2:1, stop:0 rgba(158, 29, 145, 167), stop:0.90899 rgba(51, 63, 26, 255), stop:1 rgba(15, 44, 41, 255));")
-        self.comboBox.setInputMethodHints(QtCore.Qt.ImhUrlCharactersOnly)
-        self.comboBox.setEditable(False)
-        self.comboBox.setInsertPolicy(QtWidgets.QComboBox.InsertAtCurrent)
-        self.comboBox.setFrame(True)
-        self.comboBox.setObjectName("comboBox")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("res/Icons/Innactive.png"), QtGui.QIcon.Disabled, QtGui.QIcon.Off)
-        self.comboBox.addItem(icon1, "")
-        self.comboBox.addItem("")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("res/Icons/Innactive.png"), QtGui.QIcon.Active, QtGui.QIcon.Off)
-        self.comboBox.addItem(icon2, "")
-        self.pushButton_5 = QtWidgets.QPushButton(self.header_frame)
-        self.pushButton_5.setGeometry(QtCore.QRect(300, 20, 151, 41))
-        self.pushButton_5.setStyleSheet("background: \n"
+        self.select_profile_combo.setInputMethodHints(QtCore.Qt.ImhUrlCharactersOnly)
+        self.select_profile_combo.setEditable(False)
+        self.select_profile_combo.setInsertPolicy(QtWidgets.QComboBox.InsertAtCurrent)
+        self.select_profile_combo.setDuplicatesEnabled(True)
+        self.select_profile_combo.setFrame(True)
+        self.select_profile_combo.setObjectName("select_profile_combo")
+        # icon1 = QtGui.QIcon()
+        # icon1.addPixmap(QtGui.QPixmap("res/Icons/Innactive.png"), QtGui.QIcon.Disabled, QtGui.QIcon.Off)
+        # self.select_profile_combo.addItem(icon1, "")
+        # self.select_profile_combo.addItem("")
+        # icon2 = QtGui.QIcon()
+        # icon2.addPixmap(QtGui.QPixmap("res/Icons/Innactive.png"), QtGui.QIcon.Active, QtGui.QIcon.Off)
+        # self.select_profile_combo.addItem(icon2, "")
+        self.create_profile_btn = QtWidgets.QPushButton(self.header_frame)
+        self.create_profile_btn.setGeometry(QtCore.QRect(300, 20, 151, 41))
+        self.create_profile_btn.setStyleSheet("background: \n"
 "#44475a\n"
 ";\n"
 "color:white;\n"
@@ -405,9 +415,9 @@ class Ui_MainWindow(object):
 "")
         icon3 = QtGui.QIcon()
         icon3.addPixmap(QtGui.QPixmap("res/Icons/create_profile_addicon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_5.setIcon(icon3)
-        self.pushButton_5.setIconSize(QtCore.QSize(20, 22))
-        self.pushButton_5.setObjectName("pushButton_5")
+        self.create_profile_btn.setIcon(icon3)
+        self.create_profile_btn.setIconSize(QtCore.QSize(20, 22))
+        self.create_profile_btn.setObjectName("create_profile_btn")
         self.lineEdit = QtWidgets.QLineEdit(self.header_frame)
         self.lineEdit.setGeometry(QtCore.QRect(10, 20, 281, 41))
         self.lineEdit.setCursor(QtGui.QCursor(QtCore.Qt.IBeamCursor))
@@ -461,7 +471,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.frameobj.setCurrentIndex(0)
-        self.comboBox.setCurrentIndex(0)
+        self.select_profile_combo.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -470,38 +480,40 @@ class Ui_MainWindow(object):
         self.label_12.setText(_translate("MainWindow", "Switchium"))
         self.label_16.setText(_translate("MainWindow", "An OpenSource Wallpaper Manager"))
         self.label_17.setText(_translate("MainWindow", "<a href=https://google.com  style=color:#f8f8f2 >Looking for Help?</a>"))
-        self.pushButton.setText(_translate("MainWindow", "Select Wallapaper"))
+        self.set_wallpaper_btn.setText(_translate("MainWindow", "Select Wallapaper"))
         self.label.setText(_translate("MainWindow", "    D:\\Pictures\\Images\\wallpaper.jpeg"))
         self.preview_text_label1.setText(_translate("MainWindow", "          Preview:"))
         self.label_8.setText(_translate("MainWindow", "   1920"))
         self.label_9.setText(_translate("MainWindow", "1080"))
-        self.instruction_message1.setText(_translate("MainWindow", "You\'re In Singlepaper Mode !"))
+        self.instruction_message.setText(_translate("MainWindow", "You\'re In Singlepaper Mode !"))
         self.highlightor_star1.setText(_translate("MainWindow", "  *"))
         self.preview_text_label1_2.setText(_translate("MainWindow", "Next Wallpaper:"))
-        self.pushButton_8.setText(_translate("MainWindow", "Apply Changes"))
-        self.pushButton_2.setText(_translate("MainWindow", "Color"))
+        self.apply_btn.setText(_translate("MainWindow", "Apply Changes"))
+        self.solid_back_color_btn.setText(_translate("MainWindow", "Color"))
         self.label_3.setText(_translate("MainWindow", "Use Solid color"))
-        self.pushButton_3.setText(_translate("MainWindow", "Color"))
+        self.overlay_color_btn.setText(_translate("MainWindow", "Color"))
         self.label_6.setText(_translate("MainWindow", "Set Interval :"))
-        self.comboBox_2.setItemText(0, _translate("MainWindow", "30 M"))
-        self.comboBox_2.setItemText(1, _translate("MainWindow", "1.5 H"))
-        self.comboBox_2.setItemText(2, _translate("MainWindow", "1 H"))
-        self.image_ratio_combo.setItemText(0, _translate("MainWindow", "1:1"))
+        self.time_set_combo.setItemText(0, _translate("MainWindow", "30 M"))
+        self.time_set_combo.setItemText(1, _translate("MainWindow", "1.5 H"))
+        self.time_set_combo.setItemText(2, _translate("MainWindow", "1 H"))
+        self.img_ratio_combo.setItemText(0, _translate("MainWindow", "1:1"))
         self.label_18.setText(_translate("MainWindow", "Filter extensions"))
         self.label_5.setText(_translate("MainWindow", "Papers Shape :"))
-        self.pushButton_7.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>Show changes on preview</p></body></html>"))
-        self.pushButton_7.setText(_translate("MainWindow", "Show Preview"))
+        self.show_preview_btn.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>Show changes on preview</p></body></html>"))
+        self.show_preview_btn.setText(_translate("MainWindow", "Show Preview"))
         self.label_7.setText(_translate("MainWindow", "Add Overlay"))
         self.label_10.setText(_translate("MainWindow", "* Only Works for ISB"))
-        self.image_extension_filter_combo.setItemText(0, _translate("MainWindow", "jpg"))
-        self.image_extension_filter_combo.setItemText(1, _translate("MainWindow", "png"))
-        self.image_extension_filter_combo.setItemText(2, _translate("MainWindow", "jpeg"))
-        self.image_extension_filter_combo.setItemText(3, _translate("MainWindow", "svg"))
-        self.image_extension_filter_combo.setItemText(4, _translate("MainWindow", "ico"))
+        # self.filter_ext_combo.setItemText(0, _translate("MainWindow", "jpg"))
+        # self.filter_ext_combo.setItemText(1, _translate("MainWindow", "png"))
+        # self.filter_ext_combo.setItemText(2, _translate("MainWindow", "jpeg"))
+        # self.filter_ext_combo.setItemText(3, _translate("MainWindow", "svg"))
+        # self.filter_ext_combo.setItemText(4, _translate("MainWindow", "ico"))
         self.label_13.setText(_translate("MainWindow", "Next Wallpaper In:"))
         self.label_14.setText(_translate("MainWindow", "00:20:31"))
-        self.comboBox.setItemText(0, _translate("MainWindow", "new__test22"))
-        self.comboBox.setItemText(1, _translate("MainWindow", "MidNight"))
-        self.comboBox.setItemText(2, _translate("MainWindow", "new__test22"))
-        self.pushButton_5.setText(_translate("MainWindow", "Create Profile"))
+        self.checkBox.setText(_translate("MainWindow", "Append"))
+        self.checkBox_2.setText(_translate("MainWindow", "TimeManual"))
+        # self.select_profile_combo.setItemText(0, _translate("MainWindow", " Select Profile"))
+        # self.select_profile_combo.setItemText(1, _translate("MainWindow", "MidNight"))
+        # self.select_profile_combo.setItemText(2, _translate("MainWindow", "Sunlight"))
+        self.create_profile_btn.setText(_translate("MainWindow", "Create Profile"))
         self.lineEdit.setPlaceholderText(_translate("MainWindow", "  Profile Name..."))

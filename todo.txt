@@ -16,11 +16,11 @@ cleat code a little bit
 real works = {
 
 time intervals settings --upcoming
-ext filters -- almost done
+ext filters -- done
 minimize options  --done
 change colors after color choosing --done
 get screen size show labels --done
-add append and automate functions in ui
+add append and automate functions in ui  --done
 
 }
 
