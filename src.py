@@ -482,7 +482,7 @@ class Ui_MainWindow(object):
         self.label_17.setText(_translate("MainWindow", "<a href=https://google.com  style=color:#f8f8f2 >Looking for Help?</a>"))
         self.set_wallpaper_btn.setText(_translate("MainWindow", "Select Wallapaper"))
         self.label.setText(_translate("MainWindow", "    D:\\Pictures\\Images\\wallpaper.jpeg"))
-        self.preview_text_label1.setText(_translate("MainWindow", "          Preview:"))
+        self.preview_text_label1.setText(_translate("MainWindow", "          Upcoming:"))
         self.label_8.setText(_translate("MainWindow", "   1920"))
         self.label_9.setText(_translate("MainWindow", "1080"))
         self.instruction_message.setText(_translate("MainWindow", "You\'re In Singlepaper Mode !"))

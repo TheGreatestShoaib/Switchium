@@ -11,14 +11,13 @@ import CoreUtils as cu
 import ctypes
 import json
 
+#self.upcoming_wallpaper.setPixmap(QtGui.QPixmap("../../java_codes/124257240_3161320557306202_7239468197628284308_o.jpg"))
+
+
+
+
 class Switchium_Main_Window(QtWidgets.QMainWindow):
     data= cu.find_key()
-    #profiled_data = data[self.select_profile_combo.currentText()]
-    
-    # def return_val(self):
-    #     profiled_data = self.data[self.select_profile_combo.currentText()]
-    #     return profiled_data
-
     profile_count = 0
 
     def create_profile(self):
@@ -36,7 +35,7 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
 
         
         for usr_profile in data.keys():
-            if usr_profile == "active_profile":
+            if usr_profile == "active_profile" or usr_profile == "last_wallpaper" :
                 pass
             else:
                 self.ui.select_profile_combo.addItem("")
@@ -44,6 +43,14 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
                 self.profile_count +=1
 
             #self.ui.select_profile_combo.clear()
+
+    def valueChanged_user_profiles(self):
+        self.data["active_profile"] = self.ui.select_profile_combo.currentText()
+        cu.dump_data("active_profile",self.data["active_profile"])
+        self.set_upcoming_wallpaper()
+
+
+
 
 
     def screensize(self):
@@ -56,15 +63,16 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
    
     def dialog(self):
         options = QFileDialog.Options()
-        files, _ =  QFileDialog.getOpenFileNames(self,"QFileDialog.getOpenFileNames()", "","All Files (*);;Python Files (*.py)", options=options)
+        files, _ =  QFileDialog.getOpenFileNames(self,"Select Files", "","All Files (*)", options=options)
+        print(files)
         time_interval = self.ui.time_set_combo.currentText()
+        active_profile = self.ui.select_profile_combo.currentText()
+        key_name = self.data[active_profile]
+        
         if files:
-            if len(files) <= 1:
-                saves =POST_data(files,self.data[self.ui.select_profile_combo.currentText()],time_interval)
-                cu.dump_data(self.ui.select_profile_combo.currentText(),saves)
-            else:
-                saves = POST_data(files,self.data[self.ui.select_profile_combo.currentText()],time_interval)
-                cu.dump_data(self.ui.select_profile_combo.currentText(),saves)
+                saves = POST_data(files,cu.dummy_data,time_interval) #file_paths , data , time_interval
+                cu.dump_data(active_profile,saves)
+
 
 
 
@@ -80,6 +88,7 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
 
         self.show_profile_names()
         self.show_allowed_extensions()
+        self.set_upcoming_wallpaper()
 
 
         #connect functions with buttons
@@ -97,6 +106,8 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
         self.ui.label_9.setText( f"{ self.screensize()[1] }")
         self.ui.create_profile_btn.clicked.connect(self.create_profile)
         self.ui.show_preview_btn.clicked.connect(self.show_allowed_extensions)
+
+        self.ui.select_profile_combo.currentIndexChanged.connect(self.valueChanged_user_profiles)
        
 
         self.ui.filter_ext_combo.currentIndexChanged.connect(self.filter_extensions)
@@ -108,6 +119,30 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
 
         #self.clicked = False
         self.ui.frame_2.clicked = False
+
+
+
+
+
+    def set_upcoming_wallpaper(self):
+        with open("CoreUtils/_paperDetails_update.json") as f:
+            data = json.load(f)
+
+        last_wallpaper = data["last_wallpaper"]
+        active_profile = data["active_profile"]
+        wallpaper_paths = data[active_profile]["file_path"]
+
+        for x in range(len(wallpaper_paths)) :
+            if wallpaper_paths[x] == last_wallpaper:
+                self.ui.upcoming_wallpaper.setPixmap(QtGui.QPixmap(wallpaper_paths[x+1]))
+                self.ui.next_wallpaper.setPixmap(QtGui.QPixmap(wallpaper_paths[x+2]))
+            
+
+
+        print("bruh its changing")
+
+
+
 
     def mousePressEvent(self, event):
         self.old_pos = event.screenPos()
@@ -157,13 +192,10 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
         
         #self.ui.filter_ext_combo.clear()
         x = 0
-        print(allowed_exts)
         for exts in allowed_exts:
             self.ui.filter_ext_combo.addItem("")
             self.ui.filter_ext_combo.setItemText(x,exts)
             x+=1
-
-
 
 
 

@@ -10,14 +10,12 @@ import CoreUtils as cu
 #selected_file_path = input("path : ")
 
 
-data= {
-			"mode": "single",
-			"file_name": "horahora.jpg",
-			"file_size": "129KB",
-			"file_path": "hora",
-			"set_time": 10,
-			"instant_skip": True
-	}
+# data= {
+# 			"mode": "single",
+# 			"file_path": "hora",
+# 			"set_time": 10,
+# 			"instant_skip": True
+# 	}
 
 
 
@@ -32,6 +30,7 @@ def POST_data(selected_file_path,data,interval):
 		data["file_path"] = file_paths
 		data["set_time"] = interval
 	else:
+		data["mode"] = "single"
 		data["file_path"] = selected_file_path[0]
 		data["set_time"] = interval
 	
