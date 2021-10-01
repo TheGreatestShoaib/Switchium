@@ -8,11 +8,9 @@ from data_maker import *
 from src import Ui_MainWindow
 from PyQt5.QtWidgets import QApplication, QWidget, QInputDialog, QLineEdit, QFileDialog ,QColorDialog
 import CoreUtils as cu
-import ctypes
+#import ctypes
 import json
 import random
-
-#self.upcoming_wallpaper.setPixmap(QtGui.QPixmap("../../java_codes/124257240_3161320557306202_7239468197628284308_o.jpg"))
 
 
 
@@ -20,8 +18,6 @@ import random
 class Switchium_Main_Window(QtWidgets.QMainWindow):
     data= cu.find_key()
     profile_count = 0
-
-
 
     def hide_single_stuffs(self):
         pass
@@ -33,13 +29,17 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
         if text != "":
             cu.dump_data(text,cu.dummy_data)
             self.ui.lineEdit.clear()
+            
             self.show_profile_names()
 
 
     def show_profile_names(self):
+        self.profile_count = 0
+        #self.ui.select_profile_combo.clear()
+        #self.ui.select_profile_combo.refresh
         with open("CoreUtils/_paperDetails_update.json") as f:
             data = json.load(f)
-        self.ui.select_profile_combo.clear()
+       
         
         for usr_profile in data.keys():
             if usr_profile == "active_profile" or usr_profile == "last_wallpaper" :
@@ -47,30 +47,45 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
             else:
                 self.ui.select_profile_combo.addItem("")
                 self.ui.select_profile_combo.setItemText(self.profile_count,usr_profile)
+
                 self.profile_count +=1
+
 
             
 
     def valueChanged_user_profiles(self):
-        self.data["active_profile"] = self.ui.select_profile_combo.currentText()
+        profile_name_text = self.ui.select_profile_combo.currentText()
+
+
+        if profile_name_text:
+            self.data["active_profile"] = self.ui.select_profile_combo.currentText()
+        else:
+            pass
+
+        mode = self.data[self.data["active_profile"]]["mode"]
+
+
         cu.dump_data("active_profile",self.data["active_profile"])
+        
         self.data["last_wallpaper"] = random.choice(
             self.data[self.data["active_profile"]]["file_path"]
             )
+        
         cu.dump_data("last_wallpaper",self.data["last_wallpaper"])
+
         self.set_upcoming_wallpaper()
+        if mode == "single":
+
+            self.disable_mult_mode()
+        else:
+            self.disable_single_mode()
 
 
+    # def screensize(self):
+    #     user32 = ctypes.windll.user32
+    #     screensize = user32.GetSystemMetrics(0), user32.GetSystemMetrics(1)
 
-
-
-
-
-    def screensize(self):
-        user32 = ctypes.windll.user32
-        screensize = user32.GetSystemMetrics(0), user32.GetSystemMetrics(1)
-
-        return screensize
+    #     return screensize
 
         
    
@@ -119,8 +134,8 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
        
 
        
-        self.ui.label_8.setText( f"   { self.screensize()[0] }")
-        self.ui.label_9.setText( f"{ self.screensize()[1] }")
+        #self.ui.label_8.setText( f"   { self.screensize()[0] }")
+        #self.ui.label_9.setText( f"{ self.screensize()[1] }")
         self.ui.create_profile_btn.clicked.connect(self.create_profile)
         self.ui.show_preview_btn.clicked.connect(self.show_allowed_extensions)
 
@@ -149,17 +164,21 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
         active_profile = data["active_profile"]
         wallpaper_paths = data[active_profile]["file_path"]
 
-        try:
-            for x in range(len(wallpaper_paths)) :
-                if wallpaper_paths[x] == last_wallpaper:
-                    self.ui.upcoming_wallpaper.setPixmap(QtGui.QPixmap(wallpaper_paths[x+1]))
-                    self.ui.next_wallpaper.setPixmap(QtGui.QPixmap(wallpaper_paths[x+2]))
-            
-        except IndexError:
-            x = 0
-            self.ui.upcoming_wallpaper.setPixmap(QtGui.QPixmap(wallpaper_paths[x+1]))
-            self.ui.next_wallpaper.setPixmap(QtGui.QPixmap(wallpaper_paths[x+2]))
+        single_mode = bool(data[active_profile]["mode"] == "single")
 
+        if not single_mode:
+            try:
+                for x in range(len(wallpaper_paths)) :
+                    if wallpaper_paths[x] == last_wallpaper:
+                        self.ui.upcoming_wallpaper.setPixmap(QtGui.QPixmap(wallpaper_paths[x+1]))
+                        self.ui.next_wallpaper.setPixmap(QtGui.QPixmap(wallpaper_paths[x+2]))
+                
+            except IndexError:
+                x = 0
+                self.ui.upcoming_wallpaper.setPixmap(QtGui.QPixmap(wallpaper_paths[x+1]))
+                self.ui.next_wallpaper.setPixmap(QtGui.QPixmap(wallpaper_paths[x+2]))
+        else:
+            self.ui.upcoming_wallpaper.setPixmap(QtGui.QPixmap(wallpaper_paths))
 
 
 
@@ -244,6 +263,34 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
                 "border:2px solid #44475a;\n"
                 "border-radius:25px;\n"
                 f"background:{color.name()};")
+
+
+    def disable_single_mode(self):
+        self.ui.next_wallpaper.setEnabled(False)
+        self.ui.preview_text_label1_2.setEnabled(False)
+
+        #disable Others
+
+        self.ui.img_ratio_combo.setEnabled(True)
+        self.ui.solid_back_color_btn.setEnabled(True)
+        self.ui.overlay_color_btn.setEnabled(True)
+        self.ui.show_preview_btn.setEnabled(True)
+        self.ui.overylay_percentage_slider.setEnabled(True)
+
+    def disable_mult_mode(self):
+        self.ui.img_ratio_combo.setEnabled(False)
+        self.ui.solid_back_color_btn.setEnabled(False)
+        self.ui.overlay_color_btn.setEnabled(False)
+        self.ui.show_preview_btn.setEnabled(False)
+        self.ui.overylay_percentage_slider.setEnabled(False)
+
+
+        #enable others:
+
+        self.ui.next_wallpaper.setEnabled(True)
+        self.ui.preview_text_label1_2.setEnabled(True)
+
+
 
 
 
