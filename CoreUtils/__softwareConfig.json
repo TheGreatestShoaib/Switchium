@@ -1,15 +1,13 @@
 {
   "filtered_extensions": [
-    ""
+    "ico"
   ],
+  
   "allowed_extensions": [
     "gif",
-    "svg",
     "tiff",
-    "ico",
-    "ico",
     "png",
-    "jpeg",
-    "jpg"
+    "jpg",
+    "jpeg"
   ]
 }

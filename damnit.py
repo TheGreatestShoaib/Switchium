@@ -10,6 +10,7 @@ from PyQt5.QtWidgets import QApplication, QWidget, QInputDialog, QLineEdit, QFil
 import CoreUtils as cu
 import ctypes
 import json
+import random
 
 #self.upcoming_wallpaper.setPixmap(QtGui.QPixmap("../../java_codes/124257240_3161320557306202_7239468197628284308_o.jpg"))
 
@@ -19,6 +20,12 @@ import json
 class Switchium_Main_Window(QtWidgets.QMainWindow):
     data= cu.find_key()
     profile_count = 0
+
+
+
+    def hide_single_stuffs(self):
+        pass
+
 
     def create_profile(self):
 
@@ -32,7 +39,7 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
     def show_profile_names(self):
         with open("CoreUtils/_paperDetails_update.json") as f:
             data = json.load(f)
-
+        self.ui.select_profile_combo.clear()
         
         for usr_profile in data.keys():
             if usr_profile == "active_profile" or usr_profile == "last_wallpaper" :
@@ -42,12 +49,18 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
                 self.ui.select_profile_combo.setItemText(self.profile_count,usr_profile)
                 self.profile_count +=1
 
-            #self.ui.select_profile_combo.clear()
+            
 
     def valueChanged_user_profiles(self):
         self.data["active_profile"] = self.ui.select_profile_combo.currentText()
         cu.dump_data("active_profile",self.data["active_profile"])
+        self.data["last_wallpaper"] = random.choice(
+            self.data[self.data["active_profile"]]["file_path"]
+            )
+        cu.dump_data("last_wallpaper",self.data["last_wallpaper"])
         self.set_upcoming_wallpaper()
+
+
 
 
 
@@ -72,6 +85,10 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
         if files:
                 saves = POST_data(files,cu.dummy_data,time_interval) #file_paths , data , time_interval
                 cu.dump_data(active_profile,saves)
+
+                if len(files) <= 1:
+                    self.hide_single_stuffs()
+
 
 
 
@@ -132,14 +149,16 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
         active_profile = data["active_profile"]
         wallpaper_paths = data[active_profile]["file_path"]
 
-        for x in range(len(wallpaper_paths)) :
-            if wallpaper_paths[x] == last_wallpaper:
-                self.ui.upcoming_wallpaper.setPixmap(QtGui.QPixmap(wallpaper_paths[x+1]))
-                self.ui.next_wallpaper.setPixmap(QtGui.QPixmap(wallpaper_paths[x+2]))
+        try:
+            for x in range(len(wallpaper_paths)) :
+                if wallpaper_paths[x] == last_wallpaper:
+                    self.ui.upcoming_wallpaper.setPixmap(QtGui.QPixmap(wallpaper_paths[x+1]))
+                    self.ui.next_wallpaper.setPixmap(QtGui.QPixmap(wallpaper_paths[x+2]))
             
-
-
-        print("bruh its changing")
+        except IndexError:
+            x = 0
+            self.ui.upcoming_wallpaper.setPixmap(QtGui.QPixmap(wallpaper_paths[x+1]))
+            self.ui.next_wallpaper.setPixmap(QtGui.QPixmap(wallpaper_paths[x+2]))
 
 
 
@@ -190,7 +209,7 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
 
         allowed_exts = ext_conf_data["allowed_extensions"]
         
-        #self.ui.filter_ext_combo.clear()
+        self.ui.filter_ext_combo.clear()
         x = 0
         for exts in allowed_exts:
             self.ui.filter_ext_combo.addItem("")
