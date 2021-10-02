@@ -35,7 +35,7 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
 
     def show_profile_names(self):
         self.profile_count = 0
-        #self.ui.select_profile_combo.clear()
+        self.ui.select_profile_combo.clear()
         #self.ui.select_profile_combo.refresh
         with open("CoreUtils/_paperDetails_update.json") as f:
             data = json.load(f)
@@ -45,10 +45,10 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
             if usr_profile == "active_profile" or usr_profile == "last_wallpaper" :
                 pass
             else:
-                self.ui.select_profile_combo.addItem("")
-                self.ui.select_profile_combo.setItemText(self.profile_count,usr_profile)
+                self.ui.select_profile_combo.addItem(usr_profile,usr_profile)
+                #self.ui.select_profile_combo.setItemText(self.profile_count,usr_profile)
 
-                self.profile_count +=1
+                #self.profile_count +=1
 
 
             
@@ -73,12 +73,16 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
         
         cu.dump_data("last_wallpaper",self.data["last_wallpaper"])
 
+        self.clear_wcuser_profile()
+
         self.set_upcoming_wallpaper()
         if mode == "single":
 
             self.disable_mult_mode()
         else:
             self.disable_single_mode()
+
+
 
 
     # def screensize(self):
@@ -291,6 +295,17 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
         self.ui.preview_text_label1_2.setEnabled(True)
 
 
+
+    def clear_wcuser_profile(self):
+
+        total_items_count = self.ui.select_profile_combo.count()
+        context = self.ui.select_profile_combo.currentText()
+
+        for count in range(total_items_count):
+            if context == None or context == "":
+                self.ui.select_profile_combo.removeItem(count)
+            else:
+                pass
 
 
 

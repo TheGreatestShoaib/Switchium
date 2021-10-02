@@ -2,4 +2,4 @@
 
 *.sos
 trygui.bat
-_pycache_
+__pycache__
