@@ -4,6 +4,8 @@
 from PIL import Image, ImageDraw
 import uuid
 
+#path = ""
+
 
 def create_solid_wallpaper(screensize,rgb_value):
     img = Image.new('RGBA',screensize, rgb_value)

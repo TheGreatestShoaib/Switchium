@@ -1,9 +1,9 @@
 {
   "active_profile": "default_profile",
-  "last_wallpaper": "/home/shoaib/py_codes/switchium/wallpapers/arch.png",
+  "last_wallpaper": "a",
   "default_profile": {
     "mode": "single",
-    "file_path": "temp/202ab413-1ae7-4c58-8a8b-d83c9d8ac85c.png",
+    "file_path": "temp/d699ae43-eb9b-4037-b351-bae260f1e5cd.png",
     "set_time": 10,
     "instant_skip": " "
   },
@@ -21,9 +21,9 @@
     "instant_skip": " "
   },
   "hahashoaib": {
-    "mode": "",
-    "file_path": "",
-    "set_time": "",
+    "mode": "multiple",
+    "file_path": "temp/a0183d50-8f61-490a-8e8f-f8c979394df1.png",
+    "set_time": 10,
     "instant_skip": " "
   },
   "bruh you": {

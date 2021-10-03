@@ -1,23 +1,25 @@
-#!/usr/bin/env pythonw
+#!/usr/bin/env python
 
-from src import Ui_MainWindow as mainbox
+from PyQt5.QtWidgets import QApplication, QWidget , QInputDialog, QLineEdit, QFileDialog ,QColorDialog
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QApplication, QWidget
-import sys
-from data_maker import *
 from src import Ui_MainWindow
-from PyQt5.QtWidgets import QApplication, QWidget, QInputDialog, QLineEdit, QFileDialog ,QColorDialog
+
+
 import CoreUtils as cu
+from data_maker import *
 from CoreUtils.platform_info import ult_screensize
 
 
 from CoreUtils.create_wallpaper import create_solid_wallpaper,overlay_wallpaper
 
 
+import sys
 import json
 import random
 
 
+
+#from src import Ui_MainWindow as mainbox
 
 
 class Switchium_Main_Window(QtWidgets.QMainWindow):
@@ -36,7 +38,7 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
         #call functions
 
         self.show_profile_names()
-        self.show_allowed_extensions()
+        #self.show_allowed_extensions()
         self.set_upcoming_wallpaper()
 
 
@@ -53,21 +55,11 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
         self.ui.label_8.setText( f"   { self.screensize[0] }")
         self.ui.label_9.setText( f"{ self.screensize[1] }")
         self.ui.create_profile_btn.clicked.connect(self.create_profile)
-        self.ui.show_preview_btn.clicked.connect(self.show_allowed_extensions)
+
 
         self.ui.select_profile_combo.currentIndexChanged.connect(self.active_user_profile)
        
-
-        self.ui.filter_ext_combo.currentIndexChanged.connect(self.filter_extensions)
-        #show profile names according to profile counts
-
         self.ui.show_preview_btn.clicked.connect(self.do_overlay)
-
-
-
-
-        #self.ui.upcoming_wallpaper.setPixmap(QtGui.QPixmap("/home/shoaib/py_codes/switchium/wallpapers/arch.png"))
-        print(type(self.screensize))
 
         #self.clicked = False
         self.ui.frame_2.clicked = False
@@ -126,26 +118,16 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
 
             mode = self.data[self.data["active_profile"]]["mode"]
             active_profile = data["active_profile"]
-
             cu.dump_data("active_profile",self.data["active_profile"])
-           
-
-
 
             self.data["last_wallpaper"] = random.choice(self.data[active_profile]["file_path"])
             
             cu.dump_data("last_wallpaper",self.data["last_wallpaper"])
 
 
-
             self.clear_wcuser_profile()
             self.set_upcoming_wallpaper()
             #self.set_upcoming_wallpaper()
-            if mode == "single":
-
-                self.disable_mult_mode()
-            else:
-                self.disable_single_mode()
 
         except:
             pass
@@ -203,51 +185,24 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
 
 
 
-    def filter_extensions(self):
-        #filter the extensions here with json 
-        new_ext = self.ui.filter_ext_combo.currentText()
-
-        """
-        with open("CoreUtils/__softwareConfig.json") as f:
-            ext_conf_data  = json.load(f)
-
-        try :
-            filtered_exts = ext_conf_data["filtered_extensions"].append(new_ext)
-            allowed_exts = ext_conf_data["allowed_extensions"].remove(new_ext)
-        except:
-            pass
-
-        with open("CoreUtils/__softwareConfig.json","w") as f:
-            json.dump(ext_conf_data,f,indent=2)
-
-        self.show_allowed_extensions()
-
-        """
-
-
-
-    def show_allowed_extensions(self):
-        with open("CoreUtils/__softwareConfig.json") as f:
-            ext_conf_data  = json.load(f)
-
-        allowed_exts = ext_conf_data["allowed_extensions"]
-        
-        self.ui.filter_ext_combo.clear()
-        x = 0
-        for exts in allowed_exts:
-            self.ui.filter_ext_combo.addItem("")
-            self.ui.filter_ext_combo.setItemText(x,exts)
-            x+=1
-
-
-
 
 
 
     def color_dialog_bg(self):
         color = QColorDialog.getColor()
+        active_profile = self.data["active_profile"]
    
-        create_solid_wallpaper((1920,1080),color.getRgb())
+        solid_bg = create_solid_wallpaper((1920,1080),color.getRgb())
+
+        temp_path_sim = [solid_bg]
+
+        print(solid_bg)
+        saves = POST_data(temp_path_sim,cu.dummy_data,10) #file_paths , data , time_interval
+        cu.dump_data(active_profile,saves)
+
+        print(active_profile,saves)
+
+        self.set_upcoming_wallpaper()
 
         if color.isValid():
             #print(color.name())
@@ -260,6 +215,21 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
 
     def color_dialog_overlay(self):
         self.color_overlay = QColorDialog.getColor()
+       
+       	# color = self.color_overlay
+
+        # active_profile = self.data["active_profile"]
+
+        # current_wallpaper = self.data[active_profile]["file_path"]
+        # print(current_wallpaper)
+        # overlayed_wallpaper = overlay_wallpaper(current_wallpaper,color.getRgb()) 
+       	# temp_path_sim = [overlayed_wallpaper]
+
+        # saves = POST_data(temp_path_sim,cu.dummy_data,10) #file_paths , data , time_interval
+        # cu.dump_data(active_profile,saves)
+
+        # self.set_upcoming_wallpaper()
+
 
 
 
@@ -275,12 +245,23 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
     def do_overlay(self):
         color = self.color_overlay
 
+        opacity = self.ui.overylay_percentage_slider.value()
+
+
+        masked_opacities = color.getRgb()
+        masked_opacity = (masked_opacities[0],masked_opacities[1],masked_opacities[2],opacity)
+
+
         active_profile = self.data["active_profile"]
 
         current_wallpaper = self.data[active_profile]["file_path"]
-        overlayed_wallpaper = overlay_wallpaper(current_wallpaper,color.getRgb()) 
-        #bruh = [].append(overlayed_wallpaper)
-        saves = POST_data(overlayed_wallpaper,cu.dummy_data,10) #file_paths , data , time_interval
+
+        overlayed_wallpaper = overlay_wallpaper(current_wallpaper,masked_opacity) 
+       	temp_path_sim = [overlayed_wallpaper]
+
+       	bruh = color.getRgb()
+
+        saves = POST_data(temp_path_sim,cu.dummy_data,10) #file_paths , data , time_interval
         cu.dump_data(active_profile,saves)
 
         self.set_upcoming_wallpaper()
@@ -288,30 +269,6 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
 
 
 
-    def disable_single_mode(self):
-        self.ui.next_wallpaper.setEnabled(False)
-        self.ui.preview_text_label1_2.setEnabled(False)
-
-        #disable Others
-
-        self.ui.img_ratio_combo.setEnabled(True)
-        self.ui.solid_back_color_btn.setEnabled(True)
-        self.ui.overlay_color_btn.setEnabled(True)
-        self.ui.show_preview_btn.setEnabled(True)
-        self.ui.overylay_percentage_slider.setEnabled(True)
-
-    def disable_mult_mode(self):
-        self.ui.img_ratio_combo.setEnabled(False)
-        self.ui.solid_back_color_btn.setEnabled(False)
-        self.ui.overlay_color_btn.setEnabled(False)
-        self.ui.show_preview_btn.setEnabled(False)
-        self.ui.overylay_percentage_slider.setEnabled(False)
-
-
-        #enable others:
-
-        self.ui.next_wallpaper.setEnabled(True)
-        self.ui.preview_text_label1_2.setEnabled(True)
 
 
 
