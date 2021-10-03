@@ -11,7 +11,7 @@ import CoreUtils as cu
 from CoreUtils.platform_info import ult_screensize
 
 
-from CoreUtils.create_wallpaper import create_solid_wallpaper
+from CoreUtils.create_wallpaper import create_solid_wallpaper,overlay_wallpaper
 
 
 import json
@@ -254,6 +254,18 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
 
     def color_dialog_overlay(self):
         color = QColorDialog.getColor()
+
+        active_profile = self.data["active_profile"]
+
+        current_wallpaper = self.data[active_profile]["file_path"][0]
+
+        overlayed_wallpaper = overlay_wallpaper(current_wallpaper,color.getRgb()) 
+
+        saves = POST_data([overlayed_wallpaper],cu.dummy_data,10) #file_paths , data , time_interval
+        cu.dump_data(active_profile,saves)
+
+        self.set_upcoming_wallpaper()
+
 
 
         if color.isValid():

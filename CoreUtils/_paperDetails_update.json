@@ -2,16 +2,9 @@
   "active_profile": "default_profile",
   "last_wallpaper": "/home/shoaib/py_codes/switchium/wallpapers/arch.png",
   "default_profile": {
-    "mode": "multiple",
-    "file_path": [
-      "/home/shoaib/py_codes/switchium/wallpapers/manjaro.png",
-      "/home/shoaib/py_codes/switchium/wallpapers/download (1).jpg",
-      "/home/shoaib/py_codes/switchium/wallpapers/download.jpg",
-      "/home/shoaib/py_codes/switchium/wallpapers/artix.png",
-      "/home/shoaib/py_codes/switchium/wallpapers/arch.png",
-      "/home/shoaib/py_codes/switchium/wallpapers/240947770_1098839513855940_8559387054573194912_n.jpg"
-    ],
-    "set_time": "30 M",
+    "mode": "single",
+    "file_path": "temp/202ab413-1ae7-4c58-8a8b-d83c9d8ac85c.png",
+    "set_time": 10,
     "instant_skip": " "
   },
   "bruh": {
