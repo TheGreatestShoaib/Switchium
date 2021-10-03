@@ -1,35 +1,16 @@
 {
   "active_profile": "default_profile",
-  "last_wallpaper": "a",
+  "last_wallpaper": "-",
   "default_profile": {
     "mode": "single",
-    "file_path": "temp/d699ae43-eb9b-4037-b351-bae260f1e5cd.png",
-    "set_time": 10,
-    "instant_skip": " "
-  },
-  "bruh": {
-    "mode": "multiple",
-    "file_path": [
-      "/home/shoaib/py_codes/switchium/wallpapers/manjaro.png",
-      "/home/shoaib/py_codes/switchium/wallpapers/download (1).jpg",
-      "/home/shoaib/py_codes/switchium/wallpapers/download.jpg",
-      "/home/shoaib/py_codes/switchium/wallpapers/artix.png",
-      "/home/shoaib/py_codes/switchium/wallpapers/arch.png",
-      "/home/shoaib/py_codes/switchium/wallpapers/240947770_1098839513855940_8559387054573194912_n.jpg"
-    ],
-    "set_time": "30 M",
-    "instant_skip": " "
-  },
-  "hahashoaib": {
-    "mode": "multiple",
-    "file_path": "temp/a0183d50-8f61-490a-8e8f-f8c979394df1.png",
+    "file_path": "temp/a9549c86-73d3-4015-857b-3ca9fe953091.png",
     "set_time": 10,
     "instant_skip": " "
   },
   "bruh you": {
-    "mode": "",
-    "file_path": "",
-    "set_time": "",
+    "mode": "single",
+    "file_path": "D:/py_codes/switchium/wallpapers/download (1).jpg",
+    "set_time": "30 M",
     "instant_skip": " "
   }
 }

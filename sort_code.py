@@ -152,6 +152,9 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
                     self.hide_single_stuffs()
 
 
+                self.set_upcoming_wallpaper()
+
+
 
 
 

@@ -108,7 +108,7 @@ class Ui_MainWindow(object):
         self.upcoming_wallpaper.setStyleSheet("border:4px solid white;\n"
 "border-radius:3px;")
         self.upcoming_wallpaper.setText("")
-        self.upcoming_wallpaper.setPixmap(QtGui.QPixmap("../../java_codes/124257240_3161320557306202_7239468197628284308_o.jpg"))
+        #self.upcoming_wallpaper.setPixmap(QtGui.QPixmap("../../java_codes/124257240_3161320557306202_7239468197628284308_o.jpg"))
         self.upcoming_wallpaper.setScaledContents(True)
         self.upcoming_wallpaper.setObjectName("upcoming_wallpaper")
         self.label = QtWidgets.QLabel(self.page)
@@ -180,7 +180,7 @@ class Ui_MainWindow(object):
         self.next_wallpaper.setStyleSheet("border:4px solid white;\n"
 "border-radius:3px;")
         self.next_wallpaper.setText("")
-        self.next_wallpaper.setPixmap(QtGui.QPixmap("../../java_codes/65445-cyberpunk-748x468.jpg"))
+        #self.next_wallpaper.setPixmap(QtGui.QPixmap("../../java_codes/65445-cyberpunk-748x468.jpg"))
         self.next_wallpaper.setScaledContents(True)
         self.next_wallpaper.setObjectName("next_wallpaper")
         self.preview_text_label1_2 = QtWidgets.QLabel(self.page)
