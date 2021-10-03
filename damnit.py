@@ -8,7 +8,12 @@ from data_maker import *
 from src import Ui_MainWindow
 from PyQt5.QtWidgets import QApplication, QWidget, QInputDialog, QLineEdit, QFileDialog ,QColorDialog
 import CoreUtils as cu
-#import ctypes
+from CoreUtils.platform_info import ult_screensize
+
+
+from CoreUtils.create_wallpaper import create_solid_wallpaper
+
+
 import json
 import random
 
@@ -16,6 +21,54 @@ import random
 
 
 class Switchium_Main_Window(QtWidgets.QMainWindow):
+
+    #screensize = cu.platform_info.ult_screensize
+    screensize = ult_screensize()
+
+
+    def __init__(self, parent=None):
+        QtWidgets.QWidget.__init__(self, parent)
+        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
+
+
+        #call functions
+
+        self.show_profile_names()
+        self.show_allowed_extensions()
+        self.set_upcoming_wallpaper()
+
+
+        #connect functions with buttons
+
+        self.ui.pushButton_4.clicked.connect(lambda : QApplication. quit()) #functions for exit 
+        self.ui.pushButton_9.clicked.connect(lambda: self.showMinimized()) #lambda fucntion to minimize window
+        
+        self.ui.set_wallpaper_btn.clicked.connect(self.dialog)
+        self.ui.solid_back_color_btn.clicked.connect(self.color_dialog_bg)
+        self.ui.overlay_color_btn.clicked.connect(self.color_dialog_overlay)
+       
+       
+        self.ui.label_8.setText( f"   { self.screensize[0] }")
+        self.ui.label_9.setText( f"{ self.screensize[1] }")
+        self.ui.create_profile_btn.clicked.connect(self.create_profile)
+        self.ui.show_preview_btn.clicked.connect(self.show_allowed_extensions)
+
+        self.ui.select_profile_combo.currentIndexChanged.connect(self.active_user_profile)
+       
+
+        self.ui.filter_ext_combo.currentIndexChanged.connect(self.filter_extensions)
+        #show profile names according to profile counts
+
+        
+        self.ui.upcoming_wallpaper.setPixmap(QtGui.QPixmap("/home/shoaib/py_codes/switchium/wallpapers/arch.png"))
+        print(type(self.screensize))
+
+        #self.clicked = False
+        self.ui.frame_2.clicked = False
+
+
     data= cu.find_key()
     profile_count = 0
 
@@ -53,43 +106,47 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
 
             
 
-    def valueChanged_user_profiles(self):
-        profile_name_text = self.ui.select_profile_combo.currentText()
+    def active_user_profile(self):
+        
+        try :
+            profile_name_text = self.ui.select_profile_combo.currentText()
+            
+            with open("CoreUtils/_paperDetails_update.json") as f:
+                data = json.load(f)
+
+            
+            if profile_name_text:
+                self.data["active_profile"] = self.ui.select_profile_combo.currentText()
+            else:
+                pass
+
+            mode = self.data[self.data["active_profile"]]["mode"]
+            active_profile = data["active_profile"]
+
+            cu.dump_data("active_profile",self.data["active_profile"])
+           
 
 
-        if profile_name_text:
-            self.data["active_profile"] = self.ui.select_profile_combo.currentText()
-        else:
+
+            self.data["last_wallpaper"] = random.choice(self.data[active_profile]["file_path"])
+            
+            cu.dump_data("last_wallpaper",self.data["last_wallpaper"])
+
+
+
+            self.clear_wcuser_profile()
+            self.set_upcoming_wallpaper()
+            #self.set_upcoming_wallpaper()
+            if mode == "single":
+
+                self.disable_mult_mode()
+            else:
+                self.disable_single_mode()
+
+        except:
             pass
 
-        mode = self.data[self.data["active_profile"]]["mode"]
 
-
-        cu.dump_data("active_profile",self.data["active_profile"])
-        
-        self.data["last_wallpaper"] = random.choice(
-            self.data[self.data["active_profile"]]["file_path"]
-            )
-        
-        cu.dump_data("last_wallpaper",self.data["last_wallpaper"])
-
-        self.clear_wcuser_profile()
-
-        self.set_upcoming_wallpaper()
-        if mode == "single":
-
-            self.disable_mult_mode()
-        else:
-            self.disable_single_mode()
-
-
-
-
-    # def screensize(self):
-    #     user32 = ctypes.windll.user32
-    #     screensize = user32.GetSystemMetrics(0), user32.GetSystemMetrics(1)
-
-    #     return screensize
 
         
    
@@ -107,54 +164,6 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
 
                 if len(files) <= 1:
                     self.hide_single_stuffs()
-
-
-
-
-
-
-    def __init__(self, parent=None):
-        QtWidgets.QWidget.__init__(self, parent)
-        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
-        self.ui = Ui_MainWindow()
-        self.ui.setupUi(self)
-
-
-        #call functions
-
-        self.show_profile_names()
-        self.show_allowed_extensions()
-        self.set_upcoming_wallpaper()
-
-
-        #connect functions with buttons
-
-        self.ui.pushButton_4.clicked.connect(lambda : QApplication. quit()) #functions for exit 
-        self.ui.pushButton_9.clicked.connect(lambda: self.showMinimized()) #lambda fucntion to minimize window
-        
-        self.ui.set_wallpaper_btn.clicked.connect(self.dialog)
-        self.ui.solid_back_color_btn.clicked.connect(self.color_dialog_bg)
-        self.ui.overlay_color_btn.clicked.connect(self.color_dialog_overlay)
-       
-
-       
-        #self.ui.label_8.setText( f"   { self.screensize()[0] }")
-        #self.ui.label_9.setText( f"{ self.screensize()[1] }")
-        self.ui.create_profile_btn.clicked.connect(self.create_profile)
-        self.ui.show_preview_btn.clicked.connect(self.show_allowed_extensions)
-
-        self.ui.select_profile_combo.currentIndexChanged.connect(self.valueChanged_user_profiles)
-       
-
-        self.ui.filter_ext_combo.currentIndexChanged.connect(self.filter_extensions)
-        #show profile names according to profile counts
-
-
-
-
-
-        #self.clicked = False
-        self.ui.frame_2.clicked = False
 
 
 
@@ -186,22 +195,7 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
 
 
 
-    def mousePressEvent(self, event):
-        self.old_pos = event.screenPos()
 
-    def mouseMoveEvent(self, event):
-        #if self.clicked:
-        if self.ui.frame_2.clicked:
-            dx = self.old_pos.x() - event.screenPos().x()
-            dy = self.old_pos.y() - event.screenPos().y()
-            self.move(self.pos().x() - dx, self.pos().y() - dy)
-        self.old_pos = event.screenPos()
-        #self.clicked = True
-        self.ui.frame_2.clicked = True
-
-        
-
-        return QWidget.mouseMoveEvent(self, event)
 
 
 
@@ -246,7 +240,8 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
 
     def color_dialog_bg(self):
         color = QColorDialog.getColor()
-
+   
+        create_solid_wallpaper((1920,1080),color.getRgb())
 
         if color.isValid():
             #print(color.name())
@@ -309,6 +304,24 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
 
 
 
+    def mousePressEvent(self, event):
+        self.old_pos = event.screenPos()
+
+    def mouseMoveEvent(self, event):
+        #if self.clicked:
+        if self.ui.frame_2.clicked:
+            dx = self.old_pos.x() - event.screenPos().x()
+            dy = self.old_pos.y() - event.screenPos().y()
+            self.move(self.pos().x() - dx, self.pos().y() - dy)
+        self.old_pos = event.screenPos()
+        #self.clicked = True
+        self.ui.frame_2.clicked = True
+
+        
+
+        return QWidget.mouseMoveEvent(self, event)
+
+
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
@@ -317,11 +330,3 @@ if __name__ == "__main__":
     myapp.show()
     sys.exit(app.exec_())
 
-
-
-
-    
-
-    # sys_window = QtWidgets.QWidget()
-    # sys_tray_icon = SystemTray(QtGui.QIcon("res/Icons/Active.png"), sys_window)
-    # sys_tray_icon.show()
