@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+#-*- coding: utf-8 -*-
 
 # Form implementation generated from reading ui file 'mainwin.ui'
 #
@@ -48,7 +48,7 @@ class Ui_MainWindow(object):
         self.label_12.setGeometry(QtCore.QRect(100, 0, 171, 41))
         font = QtGui.QFont()
         font.setFamily("Segoe Print")
-        font.setPointSize(-1)
+        font.setPointSize(1)
         self.label_12.setFont(font)
         self.label_12.setAutoFillBackground(False)
         self.label_12.setStyleSheet("font-size:30px;\n"
@@ -60,7 +60,7 @@ class Ui_MainWindow(object):
         self.label_16.setGeometry(QtCore.QRect(90, 50, 331, 31))
         font = QtGui.QFont()
         font.setFamily("OCR A Std")
-        font.setPointSize(-1)
+        font.setPointSize(1)
         self.label_16.setFont(font)
         self.label_16.setStyleSheet("\n"
 "font-size:14px;")
@@ -89,7 +89,7 @@ class Ui_MainWindow(object):
 "}")
         self.frameobj.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frameobj.setLineWidth(1)
-        self.frameobj.setMidLineWidth(-1)
+        self.frameobj.setMidLineWidth(1)
         self.frameobj.setObjectName("frameobj")
         self.page = QtWidgets.QWidget()
         self.page.setObjectName("page")
@@ -250,21 +250,21 @@ class Ui_MainWindow(object):
         self.time_set_combo.addItem("")
         self.time_set_combo.addItem("")
         self.line_5 = QtWidgets.QFrame(self.frame_3)
-        self.line_5.setGeometry(QtCore.QRect(-10, 400, 371, 20))
+        self.line_5.setGeometry(QtCore.QRect(10, 400, 371, 20))
         self.line_5.setLineWidth(3)
         self.line_5.setMidLineWidth(1)
         self.line_5.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_5.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_5.setObjectName("line_5")
         self.line_4 = QtWidgets.QFrame(self.frame_3)
-        self.line_4.setGeometry(QtCore.QRect(-10, 420, 371, 20))
+        self.line_4.setGeometry(QtCore.QRect(10, 420, 371, 20))
         self.line_4.setLineWidth(3)
         self.line_4.setMidLineWidth(1)
         self.line_4.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_4.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_4.setObjectName("line_4")
         self.line_6 = QtWidgets.QFrame(self.frame_3)
-        self.line_6.setGeometry(QtCore.QRect(-10, 150, 361, 20))
+        self.line_6.setGeometry(QtCore.QRect(10, 150, 361, 20))
         self.line_6.setLineWidth(3)
         self.line_6.setMidLineWidth(1)
         self.line_6.setFrameShape(QtWidgets.QFrame.HLine)
@@ -272,7 +272,7 @@ class Ui_MainWindow(object):
         self.line_6.setObjectName("line_6")
         self.img_ratio_combo = QtWidgets.QComboBox(self.frame_3)
         self.img_ratio_combo.setGeometry(QtCore.QRect(180, 480, 171, 22))
-        self.img_ratio_combo.setStyleSheet("background:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.995412, y2:1, stop:0 rgba(40, 42, 54, 265), stop:1 rgba(189, 147, 249, 205));\n"
+        self.img_ratio_combo.setStyleSheet("background:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.995412, y2:1, stop:0 rgba(40, 42, 54, 255), stop:1 rgba(189, 147, 249, 205));\n"
 "selection-background-color:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.997, y2:1, stop:0 rgba(158, 29, 145, 167), stop:0.90899 rgba(51, 63, 26, 255), stop:1 rgba(15, 44, 41, 255));\n"
 "color:#f8f8f2;")
         self.img_ratio_combo.setObjectName("img_ratio_combo")
@@ -287,7 +287,7 @@ class Ui_MainWindow(object):
         self.label_5.setStyleSheet("color:white;")
         self.label_5.setObjectName("label_5")
         self.line_3 = QtWidgets.QFrame(self.frame_3)
-        self.line_3.setGeometry(QtCore.QRect(-10, 250, 361, 20))
+        self.line_3.setGeometry(QtCore.QRect(10, 250, 361, 20))
         self.line_3.setLineWidth(3)
         self.line_3.setMidLineWidth(1)
         self.line_3.setFrameShape(QtWidgets.QFrame.HLine)
@@ -330,7 +330,7 @@ class Ui_MainWindow(object):
         self.label_10.setObjectName("label_10")
         self.filter_ext_combo = QtWidgets.QComboBox(self.frame_3)
         self.filter_ext_combo.setGeometry(QtCore.QRect(10, 480, 151, 22))
-        self.filter_ext_combo.setStyleSheet("background:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.995412, y2:1, stop:0 rgba(40, 42, 54, 265), stop:1 rgba(189, 147, 249, 205));\n"
+        self.filter_ext_combo.setStyleSheet("background:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.995412, y2:1, stop:0 rgba(40, 42, 54, 255), stop:1 rgba(189, 147, 249, 205));\n"
 "selection-background-color:qlineargradient(spread:repeat, x1:0, y1:0, x2:0.997, y2:1, stop:0 rgba(158, 29, 145, 167), stop:0.90899 rgba(51, 63, 26, 255), stop:1 rgba(15, 44, 41, 255));\n"
 "color:white;\n"
 "font-family:Times New Roman;\n"

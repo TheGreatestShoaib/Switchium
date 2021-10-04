@@ -8,3 +8,10 @@ dummy_data = {
     "set_time": "",
     "instant_skip":" "
 }
+
+
+def RAW_DATA():
+    with open("CoreUtils/_paperDetails_update.json") as f:
+        data = json.load(f)
+
+    return data

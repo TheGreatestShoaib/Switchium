@@ -86,8 +86,10 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
         self.profile_count = 0
         self.ui.select_profile_combo.clear()
         #self.ui.select_profile_combo.refresh
-        with open("CoreUtils/_paperDetails_update.json") as f:
-            data = json.load(f)
+        # with open("CoreUtils/_paperDetails_update.json") as f:
+        #     data = json.load(f)
+
+        data = cu.RAW_DATA()
        
         
         for usr_profile in data.keys():
@@ -107,22 +109,23 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
         try :
             profile_name_text = self.ui.select_profile_combo.currentText()
             
-            with open("CoreUtils/_paperDetails_update.json") as f:
-                data = json.load(f)
+
+            data = cu.RAW_DATA()
 
             
             if profile_name_text:
-                self.data["active_profile"] = self.ui.select_profile_combo.currentText()
+                data["active_profile"] = self.ui.select_profile_combo.currentText()
             else:
                 pass
 
-            mode = self.data[self.data["active_profile"]]["mode"]
             active_profile = data["active_profile"]
-            cu.dump_data("active_profile",self.data["active_profile"])
-
-            self.data["last_wallpaper"] = random.choice(self.data[active_profile]["file_path"])
+            mode = data[active_profile]["mode"]
             
-            cu.dump_data("last_wallpaper",self.data["last_wallpaper"])
+            cu.dump_data("active_profile",data["active_profile"])
+
+            data["last_wallpaper"] = data[active_profile]["file_path"][3]
+            
+            cu.dump_data("last_wallpaper",data["last_wallpaper"])
 
 
             self.clear_wcuser_profile()
@@ -137,19 +140,23 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
         
    
     def dialog(self):
+
+        data = cu.RAW_DATA()
+
         options = QFileDialog.Options()
         files, _ =  QFileDialog.getOpenFileNames(self,"Select Files", "","All Files (*)", options=options)
         print(files)
         time_interval = self.ui.time_set_combo.currentText()
         active_profile = self.ui.select_profile_combo.currentText()
-        key_name = self.data[active_profile]
+        key_name = data[active_profile]
         
         if files:
                 saves = POST_data(files,cu.dummy_data,time_interval) #file_paths , data , time_interval
                 cu.dump_data(active_profile,saves)
-
+                self.ui.label.setText( "/".join(files[0].split("/")[:-1] )) 
                 if len(files) <= 1:
                     self.hide_single_stuffs()
+                    self.ui.label.setText(files[0])
 
 
                 self.set_upcoming_wallpaper()
@@ -159,8 +166,11 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
 
 
     def set_upcoming_wallpaper(self):
-        with open("CoreUtils/_paperDetails_update.json") as f:
-            data = json.load(f)
+        # with open("CoreUtils/_paperDetails_update.json") as f:
+        #     data = json.load(f)
+
+
+        data = cu.RAW_DATA()
 
         last_wallpaper = data["last_wallpaper"]
         active_profile = data["active_profile"]
@@ -192,8 +202,11 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
 
 
     def color_dialog_bg(self):
+
+        data = cu.RAW_DATA()
+
         color = QColorDialog.getColor()
-        active_profile = self.data["active_profile"]
+        active_profile = data["active_profile"]
    
         solid_bg = create_solid_wallpaper((1920,1080),color.getRgb())
 
@@ -246,6 +259,9 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
 
 
     def do_overlay(self):
+
+        data = cu.RAW_DATA()
+
         color = self.color_overlay
 
         opacity = self.ui.overylay_percentage_slider.value()
@@ -255,9 +271,9 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
         masked_opacity = (masked_opacities[0],masked_opacities[1],masked_opacities[2],opacity)
 
 
-        active_profile = self.data["active_profile"]
+        active_profile = data["active_profile"]
 
-        current_wallpaper = self.data[active_profile]["file_path"]
+        current_wallpaper = data[active_profile]["file_path"]
 
         overlayed_wallpaper = overlay_wallpaper(current_wallpaper,masked_opacity) 
        	temp_path_sim = [overlayed_wallpaper]
@@ -296,8 +312,8 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
         if self.ui.frame_2.clicked:
             dx = self.old_pos.x() - event.screenPos().x()
             dy = self.old_pos.y() - event.screenPos().y()
-            self.move(self.pos().x() - dx, self.pos().y() - dy)
-        self.old_pos = event.screenPos()
+            self.move(self.pos().x() - round(dx), self.pos().y() - round(dy) ) 
+        self.old_pos = event.screenPos() 
         #self.clicked = True
         self.ui.frame_2.clicked = True
 

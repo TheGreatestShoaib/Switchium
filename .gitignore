@@ -3,3 +3,5 @@
 *.sos
 trygui.bat
 **/__pycache__/
+
+*.pyc
