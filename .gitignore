@@ -5,3 +5,5 @@ trygui.bat
 **/__pycache__/
 
 *.pyc
+
+temp/

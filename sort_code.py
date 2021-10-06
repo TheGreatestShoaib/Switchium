@@ -5,12 +5,12 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from src import Ui_MainWindow
 
 
-import CoreUtils as cu
+import Switchium as cu
 from data_maker import *
-from CoreUtils.platform_info import ult_screensize
+from Switchium.platform_info import ult_screensize
 
 
-from CoreUtils.create_wallpaper import create_solid_wallpaper,overlay_wallpaper
+from Switchium.create_wallpaper import create_solid_wallpaper,overlay_wallpaper
 
 
 import sys
@@ -86,7 +86,7 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
         self.profile_count = 0
         self.ui.select_profile_combo.clear()
         #self.ui.select_profile_combo.refresh
-        # with open("CoreUtils/_paperDetails_update.json") as f:
+        # with open("Switchium/_paperDetails_update.json") as f:
         #     data = json.load(f)
 
         data = cu.RAW_DATA()
@@ -166,7 +166,7 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
 
 
     def set_upcoming_wallpaper(self):
-        # with open("CoreUtils/_paperDetails_update.json") as f:
+        # with open("Switchium/_paperDetails_update.json") as f:
         #     data = json.load(f)
 
 

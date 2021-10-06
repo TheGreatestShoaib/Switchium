@@ -1,6 +1,6 @@
 
 
-from CoreUtils.update_data import *
+from Switchium.update_data import *
 
 dummy_data = {
 	"mode": "",
@@ -11,7 +11,7 @@ dummy_data = {
 
 
 def RAW_DATA():
-    with open("CoreUtils/_paperDetails_update.json") as f:
+    with open("Switchium/_paperDetails_update.json") as f:
         data = json.load(f)
 
     return data

@@ -10,6 +10,9 @@ unix_screen_size = "xrandr | grep '*' | cut -d' ' -f 4"
 # 	output = Popen(cmd,shell=True, stdout=PIPE).communicate()[0]
 # 	return output.decode().strip()
 
+def stdout_control(cmd):
+    output = Popen(cmd,shell=True,stdout=PIPE).communicate()[0].decode().strip()
+    return output
 
 
 def win_screensize():

@@ -1,10 +1,10 @@
 {
-  "active_profile": "bruh_test_new",
-  "last_wallpaper": "m",
+  "active_profile": "default_profile",
+  "last_wallpaper": "/home/shoaib/py_codes/switchium/wallpapers/download (1).jpg",
   "default_profile": {
     "mode": "single",
-    "file_path": "/home/shoaib/py_codes/switchium/wallpapers/240947770_1098839513855940_8559387054573194912_n.jpg",
-    "set_time": "30 M",
+    "file_path": "temp/897d8166-a94b-41d9-8868-e47a569d178a.png",
+    "set_time": 10,
     "instant_skip": " "
   },
   "bruh you": {
@@ -22,8 +22,8 @@
   },
   "bruh_test_new": {
     "mode": "single",
-    "file_path": "/home/shoaib/py_codes/switchium/wallpapers/download.jpg",
-    "set_time": "30 M",
+    "file_path": "temp/62549875-2d8e-46a0-a9f9-5392918a5214.png",
+    "set_time": 10,
     "instant_skip": " "
   },
   "halarput": {
@@ -49,7 +49,6 @@
     "file_path": [
       "/home/shoaib/py_codes/switchium/wallpapers/9c8496bdcf9e070d75945371f0704d1d.jpg",
       "/home/shoaib/py_codes/switchium/wallpapers/75677.gif",
-      "/home/shoaib/py_codes/switchium/wallpapers/124257240_3161320557306202_7239468197628284308_o.jpg",
       "/home/shoaib/py_codes/switchium/wallpapers/240947770_1098839513855940_8559387054573194912_n.jpg"
     ],
     "set_time": "30 M",
