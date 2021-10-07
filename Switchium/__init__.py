@@ -15,3 +15,10 @@ def RAW_DATA():
         data = json.load(f)
 
     return data
+
+
+def CONFIG_DATA():
+    with open("data/_filtered_exts.json") as f:
+        data = json.load(f)
+        
+    return data

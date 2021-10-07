@@ -18,6 +18,7 @@ import json
 import random
 
 
+sys.setrecursionlimit(100000)
 
 #from src import Ui_MainWindow as mainbox
 
@@ -38,10 +39,9 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
         #call functions
 
         self.show_profile_names()
-        #self.show_allowed_extensions()
+        self.show_allowed_extensions()
         self.set_upcoming_wallpaper()
-
-
+        
         #connect functions with buttons
 
         self.ui.pushButton_4.clicked.connect(lambda : QApplication. quit()) #functions for exit 
@@ -60,6 +60,9 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
         self.ui.select_profile_combo.currentIndexChanged.connect(self.active_user_profile)
        
         self.ui.show_preview_btn.clicked.connect(self.do_overlay)
+        self.ui.filter_ext_combo.currentIndexChanged.connect(self.show_cleaned_allowed_extensions)
+
+
 
         #self.clicked = False
         self.ui.frame_2.clicked = False
@@ -317,9 +320,31 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
         pass
 
 
-    def show_allowed_extensions(self):
-        pass
+    def show_cleaned_allowed_extensions(self):
 
+        if self.ui.filter_ext_combo is None:
+            self.ui.filter_ext_combo.clear()
+        else:
+            pass
+
+        self.show_allowed_extensions()
+
+
+
+
+
+    def show_allowed_extensions(self):
+        
+
+        allowed_ext = ["svg","ico","gif","png","jpg","jpeg"]
+
+        #filtered_exts = config.keys()
+
+        filtered_exts = ["svg","ico"]
+
+        for ext in allowed_ext:
+            if ext not in filtered_exts:
+                self.ui.filter_ext_combo.addItem(str(ext))
 
 
     def clear_wcuser_profile(self):

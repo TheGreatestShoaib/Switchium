@@ -1,5 +1,5 @@
 {
-  "active_profile": "khudar_name_chollo",
+  "active_profile": "default_profile",
   "last_wallpaper": "p",
   "default_profile": {
     "mode": "single",
@@ -55,6 +55,12 @@
     "instant_skip": " "
   },
   "khudar_name_chollo": {
+    "mode": "",
+    "file_path": "",
+    "set_time": "",
+    "instant_skip": " "
+  },
+  "hello": {
     "mode": "",
     "file_path": "",
     "set_time": "",
