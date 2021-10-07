@@ -11,7 +11,7 @@ dummy_data = {
 
 
 def RAW_DATA():
-    with open("Switchium/_paperDetails_update.json") as f:
+    with open("data/_paperDetails_update.json") as f:
         data = json.load(f)
 
     return data

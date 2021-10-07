@@ -4,7 +4,7 @@ import json
 
 
 def find_key(profile_name=None,key_name=None):
-        with open("Switchium/_paperDetails_update.json") as f:
+        with open("data/_paperDetails_update.json") as f:
                 data = json.load(f)
 
         if profile_name is not None and key_name is not None:
@@ -22,11 +22,11 @@ def find_key(profile_name=None,key_name=None):
 
 
 def dump_data(key_name,entry_data):
-        with open("Switchium/_paperDetails_update.json") as f:
+        with open("data/_paperDetails_update.json") as f:
                 data = json.load(f)
 
         data[key_name] = entry_data
 
-        with open("Switchium/_paperDetails_update.json","w") as f:
+        with open("data/_paperDetails_update.json","w") as f:
         	json.dump(data,f,indent=2)
 

@@ -246,9 +246,9 @@ class Ui_MainWindow(object):
         self.time_set_combo.setDuplicatesEnabled(False)
         self.time_set_combo.setFrame(False)
         self.time_set_combo.setObjectName("time_set_combo")
-        self.time_set_combo.addItem("")
-        self.time_set_combo.addItem("")
-        self.time_set_combo.addItem("")
+        #self.time_set_combo.addItem("")
+        #self.time_set_combo.addItem("")
+        #self.time_set_combo.addItem("")
         self.line_5 = QtWidgets.QFrame(self.frame_3)
         self.line_5.setGeometry(QtCore.QRect(10, 400, 371, 20))
         self.line_5.setLineWidth(3)
@@ -378,8 +378,8 @@ class Ui_MainWindow(object):
         self.select_profile_combo = QtWidgets.QComboBox(self.header_frame)
         self.select_profile_combo.setGeometry(QtCore.QRect(1030, 10, 191, 31))
         self.select_profile_combo.setStyleSheet("\n"
-"color:black;\n"
-"font-size:12px;\n"
+"color:white;\n"
+"font-size:14px;\n"
 "font-family:Georgia;\n"
 "border: 3px solid #44475a;\n"
 "\n"

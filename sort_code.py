@@ -64,6 +64,12 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
         #self.clicked = False
         self.ui.frame_2.clicked = False
 
+        self.ui.time_set_combo.addItem("30 Sec","30")
+        self.ui.time_set_combo.addItem("1 Min","60")
+
+        self.ui.time_set_combo.addItem("2 Min","160")
+        self.ui.time_set_combo.addItem("15 Min","900")
+        self.ui.time_set_combo.addItem("10 Min","1800")
 
     data= cu.find_key()
     profile_count = 0
@@ -86,7 +92,7 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
         self.profile_count = 0
         self.ui.select_profile_combo.clear()
         #self.ui.select_profile_combo.refresh
-        # with open("Switchium/_paperDetails_update.json") as f:
+        # with open("data/_paperDetails_update.json") as f:
         #     data = json.load(f)
 
         data = cu.RAW_DATA()
@@ -166,7 +172,7 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
 
 
     def set_upcoming_wallpaper(self):
-        # with open("Switchium/_paperDetails_update.json") as f:
+        # with open("data/_paperDetails_update.json") as f:
         #     data = json.load(f)
 
 
@@ -286,8 +292,33 @@ class Switchium_Main_Window(QtWidgets.QMainWindow):
         self.set_upcoming_wallpaper()
 
 
+    def disable_single_mode(self):
+        self.ui.next_wallpaper.setEnabled(False)
+        self.ui.preview_text_label1_2.setEnabled(False)
+
+        #disable Others
+
+        self.ui.img_ratio_combo.setEnabled(True)
+        self.ui.solid_back_color_btn.setEnabled(True)
+        self.ui.overlay_color_btn.setEnabled(True)
+        self.ui.show_preview_btn.setEnabled(True)
+        self.ui.overylay_percentage_slider.setEnabled(True)
+
+    def disable_mult_mode(self):
+        self.ui.img_ratio_combo.setEnabled(False)
+        self.ui.solid_back_color_btn.setEnabled(False)
+        self.ui.overlay_color_btn.setEnabled(False)
+        self.ui.show_preview_btn.setEnabled(False)
+        self.ui.overylay_percentage_slider.setEnabled(False)
 
 
+
+    def filter_extensions(self):
+        pass
+
+
+    def show_allowed_extensions(self):
+        pass
 
 
 

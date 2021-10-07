@@ -1,9 +1,9 @@
 {
-  "active_profile": "default_profile",
-  "last_wallpaper": "/home/shoaib/py_codes/switchium/wallpapers/download (1).jpg",
+  "active_profile": "khudar_name_chollo",
+  "last_wallpaper": "p",
   "default_profile": {
     "mode": "single",
-    "file_path": "temp/897d8166-a94b-41d9-8868-e47a569d178a.png",
+    "file_path": "temp/31cc9ade-efc0-4da0-9f8e-507d1306aaab.png",
     "set_time": 10,
     "instant_skip": " "
   },
@@ -52,6 +52,12 @@
       "/home/shoaib/py_codes/switchium/wallpapers/240947770_1098839513855940_8559387054573194912_n.jpg"
     ],
     "set_time": "30 M",
+    "instant_skip": " "
+  },
+  "khudar_name_chollo": {
+    "mode": "",
+    "file_path": "",
+    "set_time": "",
     "instant_skip": " "
   }
 }
