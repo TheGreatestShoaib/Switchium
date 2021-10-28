@@ -1,10 +1,15 @@
 {
-  "active_profile": "default_profile",
-  "last_wallpaper": "p",
+  "active_profile": "khudar_name_chollo",
+  "last_wallpaper": "m",
   "default_profile": {
-    "mode": "single",
-    "file_path": "temp/31cc9ade-efc0-4da0-9f8e-507d1306aaab.png",
-    "set_time": 10,
+    "mode": "multiple",
+    "file_path": [
+      "/home/shoaib/py_codes/switchium/wallpapers/artix.png",
+      "/home/shoaib/py_codes/switchium/wallpapers/download.jpg",
+      "/home/shoaib/py_codes/switchium/wallpapers/download (1).jpg",
+      "/home/shoaib/py_codes/switchium/wallpapers/manjaro.png"
+    ],
+    "set_time": "30 Sec",
     "instant_skip": " "
   },
   "bruh you": {
@@ -12,12 +17,9 @@
     "file_path": [
       "/home/shoaib/py_codes/switchium/wallpapers/124257240_3161320557306202_7239468197628284308_o.jpg",
       "/home/shoaib/py_codes/switchium/wallpapers/240947770_1098839513855940_8559387054573194912_n.jpg",
-      "/home/shoaib/py_codes/switchium/wallpapers/arch.png",
-      "/home/shoaib/py_codes/switchium/wallpapers/artix.png",
-      "/home/shoaib/py_codes/switchium/wallpapers/download.jpg",
-      "/home/shoaib/py_codes/switchium/wallpapers/download (1).jpg"
+      "/home/shoaib/py_codes/switchium/wallpapers/arch.png"
     ],
-    "set_time": "30 M",
+    "set_time": "30 Sec",
     "instant_skip": " "
   },
   "bruh_test_new": {
@@ -55,9 +57,9 @@
     "instant_skip": " "
   },
   "khudar_name_chollo": {
-    "mode": "",
-    "file_path": "",
-    "set_time": "",
+    "mode": "single",
+    "file_path": "/home/shoaib/py_codes/switchium/wallpapers/pYF2LX.jpg",
+    "set_time": "30 Sec",
     "instant_skip": " "
   },
   "hello": {

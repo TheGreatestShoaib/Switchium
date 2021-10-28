@@ -71,7 +71,7 @@ class Ui_MainWindow(object):
         self.label_16.setObjectName("label_16")
         self.label_17 = QtWidgets.QLabel(self.footer_frame)
         self.label_17.setGeometry(QtCore.QRect(1080, 60, 141, 31))
-        self.label_17.setStyleSheet("font-size:15px;\n"
+        self.label_17.setStyleSheet("font-size:12px;\n"
 "font-family:Monospace;\n"
 "\n"
 "color:white;\n"
