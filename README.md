@@ -1,6 +1,6 @@
 # Switchium is a open source wallpaper manager..
 
-# Under developement
+# Under development
 
 #Use Switchium for turning your desktop into a beauty
 
